@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C68C65C1BD1B1A031573011B62100159A5DECDB8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "EB6F1874BF01D6B5D182347B04875AB968E86B7E" : 0,
+    "C68C65C1BD1B1A031573011B62100159A5DECDB8" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F71068DC-E94F-49BD-9405-60A227700A02",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "EB6F1874BF01D6B5D182347B04875AB968E86B7E" : "",
+    "C68C65C1BD1B1A031573011B62100159A5DECDB8" : "ImitateBaisi\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ImitateBaisi",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ImitateBaisi.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/hrscy\/ImitateBaisi.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C68C65C1BD1B1A031573011B62100159A5DECDB8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/hrscy\/github.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EB6F1874BF01D6B5D182347B04875AB968E86B7E"
+    }
+  ]
+}
