@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		5BE0CBC799E43CD62EE656E4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7D91F6AB0D576E1A4FF2F8 /* libPods.a */; };
 		942685571C6D77E40072099B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 942685561C6D77E40072099B /* Assets.xcassets */; };
+		945AEFBA1C6EAE3A003D7CEC /* YMRecommandCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 945AEFB91C6EAE3A003D7CEC /* YMRecommandCategory.m */; };
+		945AEFBD1C6EAF7A003D7CEC /* YMRecommandCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 945AEFBC1C6EAF7A003D7CEC /* YMRecommandCategoryCell.m */; };
+		945AEFBF1C6EAF89003D7CEC /* YMRecommandCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945AEFBE1C6EAF89003D7CEC /* YMRecommandCategoryCell.xib */; };
+		945AEFC31C6ECB50003D7CEC /* YMRecommandUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 945AEFC11C6ECB50003D7CEC /* YMRecommandUserCell.m */; };
+		945AEFC41C6ECB50003D7CEC /* YMRecommandUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945AEFC21C6ECB50003D7CEC /* YMRecommandUserCell.xib */; };
+		945AEFC71C6ED334003D7CEC /* YMRecommandUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 945AEFC61C6ED334003D7CEC /* YMRecommandUser.m */; };
+		94D059FD1C6F324D005408A5 /* YMRecommandTagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D059FC1C6F324D005408A5 /* YMRecommandTagsViewController.m */; };
+		94D05A001C6F3455005408A5 /* YMRecommandTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D059FF1C6F3455005408A5 /* YMRecommandTag.m */; };
+		94D05A041C6F3575005408A5 /* YMRecommandTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D05A021C6F3575005408A5 /* YMRecommandTagCell.m */; };
+		94D05A051C6F3575005408A5 /* YMRecommandTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D05A031C6F3575005408A5 /* YMRecommandTagCell.xib */; };
 		94E0709B1C6DD39800D8D3A8 /* YMEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E070731C6DD39800D8D3A8 /* YMEssenceViewController.m */; };
 		94E0709C1C6DD39800D8D3A8 /* YMFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E070791C6DD39800D8D3A8 /* YMFriendTrendsViewController.m */; };
 		94E0709D1C6DD39800D8D3A8 /* UIBarButtonItem+YMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E0707F1C6DD39800D8D3A8 /* UIBarButtonItem+YMExtension.m */; };
@@ -31,6 +41,23 @@
 		942685471C6D77E40072099B /* ImitateBaisi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImitateBaisi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		942685561C6D77E40072099B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9426855B1C6D77E40072099B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		945AEFB81C6EAE3A003D7CEC /* YMRecommandCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRecommandCategory.h; sourceTree = "<group>"; };
+		945AEFB91C6EAE3A003D7CEC /* YMRecommandCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMRecommandCategory.m; sourceTree = "<group>"; };
+		945AEFBB1C6EAF7A003D7CEC /* YMRecommandCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRecommandCategoryCell.h; sourceTree = "<group>"; };
+		945AEFBC1C6EAF7A003D7CEC /* YMRecommandCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMRecommandCategoryCell.m; sourceTree = "<group>"; };
+		945AEFBE1C6EAF89003D7CEC /* YMRecommandCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMRecommandCategoryCell.xib; sourceTree = "<group>"; };
+		945AEFC01C6ECB50003D7CEC /* YMRecommandUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRecommandUserCell.h; sourceTree = "<group>"; };
+		945AEFC11C6ECB50003D7CEC /* YMRecommandUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMRecommandUserCell.m; sourceTree = "<group>"; };
+		945AEFC21C6ECB50003D7CEC /* YMRecommandUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMRecommandUserCell.xib; sourceTree = "<group>"; };
+		945AEFC51C6ED334003D7CEC /* YMRecommandUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRecommandUser.h; sourceTree = "<group>"; };
+		945AEFC61C6ED334003D7CEC /* YMRecommandUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMRecommandUser.m; sourceTree = "<group>"; };
+		94D059FB1C6F324D005408A5 /* YMRecommandTagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRecommandTagsViewController.h; sourceTree = "<group>"; };
+		94D059FC1C6F324D005408A5 /* YMRecommandTagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMRecommandTagsViewController.m; sourceTree = "<group>"; };
+		94D059FE1C6F3455005408A5 /* YMRecommandTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRecommandTag.h; sourceTree = "<group>"; };
+		94D059FF1C6F3455005408A5 /* YMRecommandTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMRecommandTag.m; sourceTree = "<group>"; };
+		94D05A011C6F3575005408A5 /* YMRecommandTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRecommandTagCell.h; sourceTree = "<group>"; };
+		94D05A021C6F3575005408A5 /* YMRecommandTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMRecommandTagCell.m; sourceTree = "<group>"; };
+		94D05A031C6F3575005408A5 /* YMRecommandTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMRecommandTagCell.xib; sourceTree = "<group>"; };
 		94E070721C6DD39800D8D3A8 /* YMEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMEssenceViewController.h; sourceTree = "<group>"; };
 		94E070731C6DD39800D8D3A8 /* YMEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMEssenceViewController.m; sourceTree = "<group>"; };
 		94E070781C6DD39800D8D3A8 /* YMFriendTrendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMFriendTrendsViewController.h; sourceTree = "<group>"; };
@@ -146,6 +173,8 @@
 			children = (
 				94E070721C6DD39800D8D3A8 /* YMEssenceViewController.h */,
 				94E070731C6DD39800D8D3A8 /* YMEssenceViewController.m */,
+				94D059FB1C6F324D005408A5 /* YMRecommandTagsViewController.h */,
+				94D059FC1C6F324D005408A5 /* YMRecommandTagsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -153,6 +182,8 @@
 		94E070741C6DD39800D8D3A8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				94D059FE1C6F3455005408A5 /* YMRecommandTag.h */,
+				94D059FF1C6F3455005408A5 /* YMRecommandTag.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,6 +191,9 @@
 		94E070751C6DD39800D8D3A8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				94D05A011C6F3575005408A5 /* YMRecommandTagCell.h */,
+				94D05A021C6F3575005408A5 /* YMRecommandTagCell.m */,
+				94D05A031C6F3575005408A5 /* YMRecommandTagCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,6 +224,10 @@
 		94E0707A1C6DD39800D8D3A8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				945AEFB81C6EAE3A003D7CEC /* YMRecommandCategory.h */,
+				945AEFB91C6EAE3A003D7CEC /* YMRecommandCategory.m */,
+				945AEFC51C6ED334003D7CEC /* YMRecommandUser.h */,
+				945AEFC61C6ED334003D7CEC /* YMRecommandUser.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,6 +235,12 @@
 		94E0707B1C6DD39800D8D3A8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				945AEFBB1C6EAF7A003D7CEC /* YMRecommandCategoryCell.h */,
+				945AEFBC1C6EAF7A003D7CEC /* YMRecommandCategoryCell.m */,
+				945AEFBE1C6EAF89003D7CEC /* YMRecommandCategoryCell.xib */,
+				945AEFC01C6ECB50003D7CEC /* YMRecommandUserCell.h */,
+				945AEFC11C6ECB50003D7CEC /* YMRecommandUserCell.m */,
+				945AEFC21C6ECB50003D7CEC /* YMRecommandUserCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -407,7 +451,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				94E070A91C6E079500D8D3A8 /* YMFriendTrendsViewController.xib in Resources */,
+				94D05A051C6F3575005408A5 /* YMRecommandTagCell.xib in Resources */,
+				945AEFC41C6ECB50003D7CEC /* YMRecommandUserCell.xib in Resources */,
 				94E070AE1C6E11B100D8D3A8 /* YMRecommandViewController.xib in Resources */,
+				945AEFBF1C6EAF89003D7CEC /* YMRecommandCategoryCell.xib in Resources */,
 				942685571C6D77E40072099B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,8 +515,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				94E070A41C6DD39800D8D3A8 /* main.m in Sources */,
+				945AEFC71C6ED334003D7CEC /* YMRecommandUser.m in Sources */,
 				94E070AD1C6E11B100D8D3A8 /* YMRecommandViewController.m in Sources */,
 				94E070A11C6DD39800D8D3A8 /* YMMeViewController.m in Sources */,
+				94D059FD1C6F324D005408A5 /* YMRecommandTagsViewController.m in Sources */,
+				94D05A001C6F3455005408A5 /* YMRecommandTag.m in Sources */,
 				94E0709D1C6DD39800D8D3A8 /* UIBarButtonItem+YMExtension.m in Sources */,
 				94E070A31C6DD39800D8D3A8 /* AppDelegate.m in Sources */,
 				94E070A01C6DD39800D8D3A8 /* YMTabBar.m in Sources */,
@@ -477,9 +527,13 @@
 				94E0709C1C6DD39800D8D3A8 /* YMFriendTrendsViewController.m in Sources */,
 				94E0709F1C6DD39800D8D3A8 /* YMTabBarController.m in Sources */,
 				94E0709E1C6DD39800D8D3A8 /* UIView+YMExtension.m in Sources */,
+				945AEFBD1C6EAF7A003D7CEC /* YMRecommandCategoryCell.m in Sources */,
+				945AEFC31C6ECB50003D7CEC /* YMRecommandUserCell.m in Sources */,
 				94E070B01C6E1FD300D8D3A8 /* Foundation+Log.m in Sources */,
 				94E0709B1C6DD39800D8D3A8 /* YMEssenceViewController.m in Sources */,
+				945AEFBA1C6EAE3A003D7CEC /* YMRecommandCategory.m in Sources */,
 				94E070A21C6DD39800D8D3A8 /* YMNewViewController.m in Sources */,
+				94D05A041C6F3575005408A5 /* YMRecommandTagCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "YMEssenceViewController.h"
+#import "YMRecommandTagsViewController.h"
 
 @implementation YMEssenceViewController
 
@@ -21,7 +22,8 @@
 
 #pragma mark 导航栏左边的按钮点击
 -(void)tagButtonClick {
-    YMLog(@"%s",__func__);
+    YMRecommandTagsViewController *tagVC = [[YMRecommandTagsViewController alloc] init];
+    [self.navigationController pushViewController:tagVC animated:YES];
 }
 
 @end
