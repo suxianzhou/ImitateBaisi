@@ -19,6 +19,9 @@
 		94D05A001C6F3455005408A5 /* YMRecommandTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D059FF1C6F3455005408A5 /* YMRecommandTag.m */; };
 		94D05A041C6F3575005408A5 /* YMRecommandTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D05A021C6F3575005408A5 /* YMRecommandTagCell.m */; };
 		94D05A051C6F3575005408A5 /* YMRecommandTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D05A031C6F3575005408A5 /* YMRecommandTagCell.xib */; };
+		94D05A2E1C706ADF005408A5 /* YMLoginRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D05A2C1C706ADF005408A5 /* YMLoginRegisterController.m */; };
+		94D05A2F1C706ADF005408A5 /* YMLoginRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D05A2D1C706ADF005408A5 /* YMLoginRegisterController.xib */; };
+		94D05A321C707321005408A5 /* YMVerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D05A311C707321005408A5 /* YMVerticalButton.m */; };
 		94E0709B1C6DD39800D8D3A8 /* YMEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E070731C6DD39800D8D3A8 /* YMEssenceViewController.m */; };
 		94E0709C1C6DD39800D8D3A8 /* YMFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E070791C6DD39800D8D3A8 /* YMFriendTrendsViewController.m */; };
 		94E0709D1C6DD39800D8D3A8 /* UIBarButtonItem+YMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E0707F1C6DD39800D8D3A8 /* UIBarButtonItem+YMExtension.m */; };
@@ -34,6 +37,9 @@
 		94E070AD1C6E11B100D8D3A8 /* YMRecommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E070AB1C6E11B100D8D3A8 /* YMRecommandViewController.m */; };
 		94E070AE1C6E11B100D8D3A8 /* YMRecommandViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E070AC1C6E11B100D8D3A8 /* YMRecommandViewController.xib */; };
 		94E070B01C6E1FD300D8D3A8 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E070AF1C6E1FD300D8D3A8 /* Foundation+Log.m */; };
+		94FEF3671C70AC680001A8D1 /* YMTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FEF3661C70AC680001A8D1 /* YMTextField.m */; };
+		94FEF36A1C70C77E0001A8D1 /* YMPushGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FEF3691C70C77E0001A8D1 /* YMPushGuide.m */; };
+		94FEF36C1C70C78A0001A8D1 /* YMPushGuide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94FEF36B1C70C78A0001A8D1 /* YMPushGuide.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +64,11 @@
 		94D05A011C6F3575005408A5 /* YMRecommandTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRecommandTagCell.h; sourceTree = "<group>"; };
 		94D05A021C6F3575005408A5 /* YMRecommandTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMRecommandTagCell.m; sourceTree = "<group>"; };
 		94D05A031C6F3575005408A5 /* YMRecommandTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMRecommandTagCell.xib; sourceTree = "<group>"; };
+		94D05A2B1C706ADF005408A5 /* YMLoginRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMLoginRegisterController.h; sourceTree = "<group>"; };
+		94D05A2C1C706ADF005408A5 /* YMLoginRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMLoginRegisterController.m; sourceTree = "<group>"; };
+		94D05A2D1C706ADF005408A5 /* YMLoginRegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMLoginRegisterController.xib; sourceTree = "<group>"; };
+		94D05A301C707321005408A5 /* YMVerticalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMVerticalButton.h; sourceTree = "<group>"; };
+		94D05A311C707321005408A5 /* YMVerticalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMVerticalButton.m; sourceTree = "<group>"; };
 		94E070721C6DD39800D8D3A8 /* YMEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMEssenceViewController.h; sourceTree = "<group>"; };
 		94E070731C6DD39800D8D3A8 /* YMEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMEssenceViewController.m; sourceTree = "<group>"; };
 		94E070781C6DD39800D8D3A8 /* YMFriendTrendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMFriendTrendsViewController.h; sourceTree = "<group>"; };
@@ -85,6 +96,11 @@
 		94E070AB1C6E11B100D8D3A8 /* YMRecommandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMRecommandViewController.m; sourceTree = "<group>"; };
 		94E070AC1C6E11B100D8D3A8 /* YMRecommandViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMRecommandViewController.xib; sourceTree = "<group>"; };
 		94E070AF1C6E1FD300D8D3A8 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		94FEF3651C70AC680001A8D1 /* YMTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMTextField.h; sourceTree = "<group>"; };
+		94FEF3661C70AC680001A8D1 /* YMTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMTextField.m; sourceTree = "<group>"; };
+		94FEF3681C70C77E0001A8D1 /* YMPushGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMPushGuide.h; sourceTree = "<group>"; };
+		94FEF3691C70C77E0001A8D1 /* YMPushGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMPushGuide.m; sourceTree = "<group>"; };
+		94FEF36B1C70C78A0001A8D1 /* YMPushGuide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMPushGuide.xib; sourceTree = "<group>"; };
 		9E7D91F6AB0D576E1A4FF2F8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB61E360791935792A37A7BC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -217,6 +233,9 @@
 				94E070AA1C6E11B100D8D3A8 /* YMRecommandViewController.h */,
 				94E070AB1C6E11B100D8D3A8 /* YMRecommandViewController.m */,
 				94E070AC1C6E11B100D8D3A8 /* YMRecommandViewController.xib */,
+				94D05A2B1C706ADF005408A5 /* YMLoginRegisterController.h */,
+				94D05A2C1C706ADF005408A5 /* YMLoginRegisterController.m */,
+				94D05A2D1C706ADF005408A5 /* YMLoginRegisterController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -241,6 +260,10 @@
 				945AEFC01C6ECB50003D7CEC /* YMRecommandUserCell.h */,
 				945AEFC11C6ECB50003D7CEC /* YMRecommandUserCell.m */,
 				945AEFC21C6ECB50003D7CEC /* YMRecommandUserCell.xib */,
+				94D05A301C707321005408A5 /* YMVerticalButton.h */,
+				94D05A311C707321005408A5 /* YMVerticalButton.m */,
+				94FEF3651C70AC680001A8D1 /* YMTextField.h */,
+				94FEF3661C70AC680001A8D1 /* YMTextField.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -376,6 +399,9 @@
 				94E070981C6DD39800D8D3A8 /* AppDelegate.m */,
 				94E070991C6DD39800D8D3A8 /* main.m */,
 				94E0709A1C6DD39800D8D3A8 /* PrefixHeader.pch */,
+				94FEF3681C70C77E0001A8D1 /* YMPushGuide.h */,
+				94FEF3691C70C77E0001A8D1 /* YMPushGuide.m */,
+				94FEF36B1C70C78A0001A8D1 /* YMPushGuide.xib */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -451,8 +477,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				94E070A91C6E079500D8D3A8 /* YMFriendTrendsViewController.xib in Resources */,
+				94D05A2F1C706ADF005408A5 /* YMLoginRegisterController.xib in Resources */,
 				94D05A051C6F3575005408A5 /* YMRecommandTagCell.xib in Resources */,
 				945AEFC41C6ECB50003D7CEC /* YMRecommandUserCell.xib in Resources */,
+				94FEF36C1C70C78A0001A8D1 /* YMPushGuide.xib in Resources */,
 				94E070AE1C6E11B100D8D3A8 /* YMRecommandViewController.xib in Resources */,
 				945AEFBF1C6EAF89003D7CEC /* YMRecommandCategoryCell.xib in Resources */,
 				942685571C6D77E40072099B /* Assets.xcassets in Resources */,
@@ -518,12 +546,15 @@
 				945AEFC71C6ED334003D7CEC /* YMRecommandUser.m in Sources */,
 				94E070AD1C6E11B100D8D3A8 /* YMRecommandViewController.m in Sources */,
 				94E070A11C6DD39800D8D3A8 /* YMMeViewController.m in Sources */,
+				94FEF36A1C70C77E0001A8D1 /* YMPushGuide.m in Sources */,
 				94D059FD1C6F324D005408A5 /* YMRecommandTagsViewController.m in Sources */,
 				94D05A001C6F3455005408A5 /* YMRecommandTag.m in Sources */,
 				94E0709D1C6DD39800D8D3A8 /* UIBarButtonItem+YMExtension.m in Sources */,
 				94E070A31C6DD39800D8D3A8 /* AppDelegate.m in Sources */,
 				94E070A01C6DD39800D8D3A8 /* YMTabBar.m in Sources */,
+				94D05A321C707321005408A5 /* YMVerticalButton.m in Sources */,
 				94E070A71C6DD78E00D8D3A8 /* YMNavigationController.m in Sources */,
+				94D05A2E1C706ADF005408A5 /* YMLoginRegisterController.m in Sources */,
 				94E0709C1C6DD39800D8D3A8 /* YMFriendTrendsViewController.m in Sources */,
 				94E0709F1C6DD39800D8D3A8 /* YMTabBarController.m in Sources */,
 				94E0709E1C6DD39800D8D3A8 /* UIView+YMExtension.m in Sources */,
@@ -534,6 +565,7 @@
 				945AEFBA1C6EAE3A003D7CEC /* YMRecommandCategory.m in Sources */,
 				94E070A21C6DD39800D8D3A8 /* YMNewViewController.m in Sources */,
 				94D05A041C6F3575005408A5 /* YMRecommandTagCell.m in Sources */,
+				94FEF3671C70AC680001A8D1 /* YMTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

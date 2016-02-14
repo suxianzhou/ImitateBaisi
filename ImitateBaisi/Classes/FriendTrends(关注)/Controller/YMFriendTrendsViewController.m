@@ -8,6 +8,7 @@
 
 #import "YMFriendTrendsViewController.h"
 #import "YMRecommandViewController.h"
+#import "YMLoginRegisterController.h"
 
 @implementation YMFriendTrendsViewController
 
@@ -26,5 +27,11 @@
     
     [self.navigationController pushViewController:recommandVC animated:YES];
 }
+
+- (IBAction)loginRegister:(UIButton *)sender {
+    YMLoginRegisterController *login = [[YMLoginRegisterController alloc] init];
+    [self presentViewController:login animated:YES completion:nil];
+}
+
 
 @end

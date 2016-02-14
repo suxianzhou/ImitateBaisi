@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "YMTabBarController.h"
+#import "YMPushGuide.h"
 
 @interface AppDelegate ()
 
@@ -27,6 +28,9 @@
     
     //显示窗口
     [self.window makeKeyAndVisible];
+    
+    //显示推送引导
+    [YMPushGuide show];
     
     
     return YES;
