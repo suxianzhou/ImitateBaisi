@@ -31,6 +31,7 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
+
 - (IBAction)closeBtn:(UIButton *)sender {
     [self removeFromSuperview];
 }
