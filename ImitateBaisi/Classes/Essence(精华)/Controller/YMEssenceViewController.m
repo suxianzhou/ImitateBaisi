@@ -46,14 +46,19 @@
 #pragma mark  初始化子控制器
 -(void)setupChildViewControllers {
     YMAllViewController *allVC = [[YMAllViewController alloc] init];
+    allVC.title = @"全部";
     [self addChildViewController:allVC];
-    YMViedoViewController *videoVC = [[YMViedoViewController alloc] init];
-    [self addChildViewController:videoVC];
+    YMViedoViewController *viedoVC = [[YMViedoViewController alloc] init];
+    viedoVC.title = @"视频";
+    [self addChildViewController:viedoVC];
     YMVoiceViewController *voiceVC = [[YMVoiceViewController alloc] init];
+    voiceVC.title = @"声音";
     [self addChildViewController:voiceVC];
     YMPictureTableViewController *pictureVC = [[YMPictureTableViewController alloc] init];
+    pictureVC.title = @"图片";
     [self addChildViewController:pictureVC];
     YMWordTableViewController *wordVC = [[YMWordTableViewController alloc] init];
+    wordVC.title = @"段子";
     [self addChildViewController:wordVC];
 }
 
@@ -78,7 +83,7 @@
     //标签栏
     UIView *titlesView = [[UIView alloc] init];
     titlesView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.7];
-    titlesView.frame = CGRectMake(0, 64, self.view.width, 35);
+    titlesView.frame = CGRectMake(0, YMTitlesViewY, self.view.width, YMTitlesViewH);
     [self.view addSubview:titlesView];
     self.titlesView = titlesView;
     
@@ -91,17 +96,17 @@
     self.indicatorView = indicatorView;
     
     //内部子标签
-    NSArray *titles = @[@"全部", @"视频", @"声音", @"图片", @"段子"];
-    NSInteger count = 5;
+    NSInteger count = self.childViewControllers.count;
     CGFloat width = titlesView.width / count;
     CGFloat height = titlesView.height;
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < count; i++) {
         UIButton *button = [[UIButton alloc] init];
         button.height = height;
         button.width = width;
         button.x = i * width;
         button.tag = i;
-        [button setTitle:titles[i] forState:UIControlStateNormal];
+        UIViewController *vc = self.childViewControllers[i];
+        [button setTitle:vc.title forState:UIControlStateNormal];
         [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor redColor] forState:UIControlStateDisabled];
         button.titleLabel.font = [UIFont systemFontOfSize:14];
@@ -160,12 +165,10 @@
     //当前索引
     NSInteger index = scrollView.contentOffset.x / scrollView.width;
     //取出子控制器
-    UITableViewController *vc = self.childViewControllers[index];
+    UIViewController *vc = self.childViewControllers[index];
     vc.view.x = scrollView.contentOffset.x;
-    //设置内边距
-    CGFloat bottom = self.tabBarController.tabBar.height;
-    CGFloat top = CGRectGetMaxY(self.titlesView.frame);
-    vc.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
+    vc.view.y = 0;//设置控制器的y值为0(默认为20)
+    vc.view.height = scrollView.height;//设置控制器的view的height值为整个屏幕的高度（默认是比屏幕少20）
     [scrollView addSubview:vc.view];
 }
 

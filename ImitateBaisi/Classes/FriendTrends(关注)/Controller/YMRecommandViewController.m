@@ -109,7 +109,6 @@ static NSString * const userID = @"user";
     
     //底部
     self.userTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreUsers)];
-    self.userTableView.mj_footer.hidden = YES;
 }
 
 #pragma mark 加载用户数据
@@ -187,6 +186,7 @@ static NSString * const userID = @"user";
     //右边用户表格
     //让底部控件结束刷新
     [self checkFooterState];
+    
     return [YMSelectedCategory users].count;
 }
 

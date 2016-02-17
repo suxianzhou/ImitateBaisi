@@ -7,8 +7,24 @@
 //
 
 #import "YMWordTableViewController.h"
+#import "AFHTTPSessionManager.h"
+#import "UIImageView+WebCache.h"
+#import "YMTopic.h"
+#import "MJExtension.h"
+#import "MJRefresh.h"
+#import "YMTopicCell.h"
 
 @interface YMWordTableViewController ()
+
+/** 帖子*/
+@property (nonatomic, strong) NSMutableArray *topics;
+/** 页码*/
+@property (nonatomic, assign) NSInteger page;
+/** 当加载下一页数据时需要这个参数*/
+@property (nonatomic, copy) NSString *maxtime;
+
+/** 上一次请求参数*/
+@property (nonatomic, strong) NSDictionary *parmas;
 
 @end
 
@@ -16,12 +32,94 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //初始化表格
+    [self setupTableView];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    //添加刷新控件
+    [self setupRefresh];
+}
+
+static NSString *const YMTopicCellID = @"topic";
+
+#pragma mark 初始化表格
+-(void)setupTableView {
+    //设置内边距
+    CGFloat bottom = self.tabBarController.tabBar.height;
+    CGFloat top = YMTitlesViewY + YMTitlesViewH;
+    self.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
+    //设置滚动条的内边距
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = [UIColor clearColor];
+    //注册
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([YMTopicCell class]) bundle:nil] forCellReuseIdentifier:YMTopicCellID];
+}
+
+#pragma mark 添加刷新控件
+-(void)setupRefresh {
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewTopics)];
+    self.tableView.mj_header.automaticallyChangeAlpha = YES;
+    [self.tableView.mj_header beginRefreshing];
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreTopics)];
+}
+
+#pragma mark 数据处理
+-(void)loadNewTopics {
+    //结束上拉
+    [self.tableView.mj_footer endRefreshing];
+    //请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"a"] = @"list";
+    params[@"c"] = @"data";
+    params[@"type"] = @"29";
+    self.parmas = params;
+    // 发送请求给服务器
+    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (self.parmas != params) return;
+        //存储maxtime
+        self.maxtime = responseObject[@"info"][@"maxtime"];
+        self.topics = [YMTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        [self.tableView reloadData];
+        //结束刷新
+        [self.tableView.mj_header endRefreshing];
+        //清空页码
+        self.page = 0;
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        //结束刷新
+        [self.tableView.mj_header endRefreshing];
+        //回复页码
+        self.page--;
+    }];
+}
+
+#pragma mark 加载更多数据
+-(void)loadMoreTopics {
+    //结束下拉
+    [self.tableView.mj_header endRefreshing];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.page ++;
+    //请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"a"] = @"list";
+    params[@"c"] = @"data";
+    params[@"type"] = @"29";
+    params[@"page"] = @(self.page);
+    params[@"maxtime"] = self.maxtime;
+    self.parmas = params;
+    // 发送请求给服务器
+    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (self.parmas != params) return;
+        
+        NSArray *newTopics = [YMTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        [self.topics addObjectsFromArray:newTopics];
+        //刷新表格
+        [self.tableView reloadData];
+        //结束刷新
+        [self.tableView.mj_footer endRefreshing];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        //结束刷新
+        [self.tableView.mj_footer endRefreshing];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,20 +127,28 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - Table view delegate
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 200;
+}
+
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 50;
+    self.tableView.mj_footer.hidden = (self.topics.count == 0);
+    return self.topics.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *ID = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-    }
-    cell.textLabel.text = [NSString stringWithFormat:@"%@----%zd",[self class], indexPath.row];
-    
+    YMTopicCell *cell = [tableView dequeueReusableCellWithIdentifier:YMTopicCellID];
+    cell.topic = self.topics[indexPath.row];
     return cell;
 }
+
+-(NSMutableArray *)topics{
+    if (_topics == nil) {
+        _topics = [[NSMutableArray alloc] init];
+    }
+    return _topics;
+}
+
 @end
