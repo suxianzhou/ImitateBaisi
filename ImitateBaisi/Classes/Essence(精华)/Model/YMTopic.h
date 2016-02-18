@@ -26,5 +26,7 @@
 @property (nonatomic, assign) NSInteger repost;
 /** 评论的数量*/
 @property (nonatomic, assign) NSInteger comment;
+/** 是否是新浪加v用户*/
+@property (nonatomic, assign, getter=isSina_v) BOOL sina_v;
 
 @end

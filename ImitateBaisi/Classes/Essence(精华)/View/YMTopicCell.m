@@ -26,6 +26,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
 /** 评论按钮*/
 @property (weak, nonatomic) IBOutlet UIButton *commentBuuton;
+/** 新浪加v*/
+@property (weak, nonatomic) IBOutlet UIImageView *sina_vImageView;
 
 @end
 
@@ -40,11 +42,12 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    
 }
 
 -(void)setTopic:(YMTopic *)topic {
     _topic = topic;
+    
+    self.sina_vImageView.hidden = !topic.sina_v;
     [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image]placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
     self.nameLabel.text = topic.name;
     self.createTimeLabel.text = topic.create_time;

@@ -138,6 +138,14 @@
                         <color key="textColor" red="0.58823529411764708" green="0.58823529411764708" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile_AddV_authen" translatesAutoresizingMaskIntoConstraints="NO" id="VCl-Qr-VB4">
+                        <rect key="frame" x="51" y="51" width="14" height="14"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="8C7-oM-I3N"/>
+                            <constraint firstAttribute="width" constant="14" id="VGA-sq-pSW"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <animations/>
                 <constraints>
@@ -145,6 +153,8 @@
                     <constraint firstItem="HHb-sT-jRW" firstAttribute="leading" secondItem="CDE-sX-0Gv" secondAttribute="leading" id="APx-Hh-QHm"/>
                     <constraint firstAttribute="trailing" secondItem="OC2-MJ-X7v" secondAttribute="trailing" constant="10" id="B1d-fq-Mid"/>
                     <constraint firstItem="OC2-MJ-X7v" firstAttribute="top" secondItem="7yd-bO-JIt" secondAttribute="top" id="DMI-OA-Iu8"/>
+                    <constraint firstItem="VCl-Qr-VB4" firstAttribute="trailing" secondItem="7yd-bO-JIt" secondAttribute="trailing" constant="5" id="FGw-21-7UK"/>
+                    <constraint firstItem="VCl-Qr-VB4" firstAttribute="bottom" secondItem="7yd-bO-JIt" secondAttribute="bottom" constant="5" id="H68-AE-yuC"/>
                     <constraint firstItem="HHb-sT-jRW" firstAttribute="bottom" secondItem="7yd-bO-JIt" secondAttribute="bottom" id="PNt-w3-4Bi"/>
                     <constraint firstAttribute="trailing" secondItem="pT2-qa-fZ8" secondAttribute="trailing" id="Z2Z-Nw-fU8"/>
                     <constraint firstItem="7yd-bO-JIt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="aSq-MT-1bo"/>
@@ -163,11 +173,13 @@
                 <outlet property="nameLabel" destination="CDE-sX-0Gv" id="Xqs-Ju-aGe"/>
                 <outlet property="profileImageView" destination="7yd-bO-JIt" id="xme-lx-A72"/>
                 <outlet property="shareButton" destination="TCK-sA-E3P" id="aek-Cj-TAb"/>
+                <outlet property="sina_vImageView" destination="VCl-Qr-VB4" id="Ppt-2T-tdc"/>
             </connections>
             <point key="canvasLocation" x="237" y="476"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Profile_AddV_authen" width="14" height="14"/>
         <image name="cell-button-line" width="1" height="29"/>
         <image name="cell-content-line" width="299" height="1"/>
         <image name="cellFollowClickIcon" width="19" height="20"/>
