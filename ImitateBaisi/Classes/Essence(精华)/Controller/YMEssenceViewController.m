@@ -8,11 +8,7 @@
 
 #import "YMEssenceViewController.h"
 #import "YMRecommandTagsViewController.h"
-#import "YMAllViewController.h"
-#import "YMViedoViewController.h"
-#import "YMVoiceViewController.h"
-#import "YMPictureTableViewController.h"
-#import "YMWordTableViewController.h"
+#import "YMTopicViewController.h"
 
 @interface YMEssenceViewController () <UIScrollViewDelegate>
 
@@ -45,20 +41,25 @@
 
 #pragma mark  初始化子控制器
 -(void)setupChildViewControllers {
-    YMAllViewController *allVC = [[YMAllViewController alloc] init];
+    YMTopicViewController *allVC = [[YMTopicViewController alloc] init];
     allVC.title = @"全部";
+    allVC.type = YMTopicTypeAll;
     [self addChildViewController:allVC];
-    YMViedoViewController *viedoVC = [[YMViedoViewController alloc] init];
-    viedoVC.title = @"视频";
-    [self addChildViewController:viedoVC];
-    YMVoiceViewController *voiceVC = [[YMVoiceViewController alloc] init];
+    YMTopicViewController *videoVC = [[YMTopicViewController alloc] init];
+    videoVC.title = @"视频";
+    videoVC.type = YMTopicTypeVideo;
+    [self addChildViewController:videoVC];
+    YMTopicViewController *voiceVC = [[YMTopicViewController alloc] init];
     voiceVC.title = @"声音";
+    voiceVC.type = YMTopicTypeVoice;
     [self addChildViewController:voiceVC];
-    YMPictureTableViewController *pictureVC = [[YMPictureTableViewController alloc] init];
+    YMTopicViewController *pictureVC = [[YMTopicViewController alloc] init];
     pictureVC.title = @"图片";
+    pictureVC.type = YMTopicTypePicture;
     [self addChildViewController:pictureVC];
-    YMWordTableViewController *wordVC = [[YMWordTableViewController alloc] init];
+    YMTopicViewController *wordVC = [[YMTopicViewController alloc] init];
     wordVC.title = @"段子";
+    wordVC.type = YMTopicTypeWord;
     [self addChildViewController:wordVC];
 }
 

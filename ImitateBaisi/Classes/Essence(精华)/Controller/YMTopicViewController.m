@@ -6,7 +6,7 @@
 //  Copyright © 2016年 hrscy. All rights reserved.
 //
 
-#import "YMWordTableViewController.h"
+#import "YMTopicViewController.h"
 #import "AFHTTPSessionManager.h"
 #import "UIImageView+WebCache.h"
 #import "YMTopic.h"
@@ -14,7 +14,7 @@
 #import "MJRefresh.h"
 #import "YMTopicCell.h"
 
-@interface YMWordTableViewController ()
+@interface YMTopicViewController ()
 
 /** 帖子*/
 @property (nonatomic, strong) NSMutableArray *topics;
@@ -28,7 +28,7 @@
 
 @end
 
-@implementation YMWordTableViewController
+@implementation YMTopicViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -71,7 +71,7 @@ static NSString *const YMTopicCellID = @"topic";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
-    params[@"type"] = @"29";
+    params[@"type"] = @(self.type);
     self.parmas = params;
     // 发送请求给服务器
     [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -102,7 +102,7 @@ static NSString *const YMTopicCellID = @"topic";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
-    params[@"type"] = @"29";
+    params[@"type"] = @(self.type);
     params[@"page"] = @(self.page);
     params[@"maxtime"] = self.maxtime;
     self.parmas = params;
