@@ -12,7 +12,7 @@
 /**
  *  id
  */
-@property (nonatomic, assign) NSNumber *id;
+@property (nonatomic, assign) NSNumber *ID;
 /**
  *  名字
  */

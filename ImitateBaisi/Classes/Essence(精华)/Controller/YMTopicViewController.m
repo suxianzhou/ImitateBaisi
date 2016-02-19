@@ -129,7 +129,10 @@ static NSString *const YMTopicCellID = @"topic";
 
 #pragma mark - Table view delegate
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 200;
+    //取出帖子模型
+    YMTopic *topic = self.topics[indexPath.row];
+    //返回这个cell对应的高度
+    return topic.cellHeight;
 }
 
 #pragma mark - Table view data source

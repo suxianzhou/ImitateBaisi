@@ -28,6 +28,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *commentBuuton;
 /** 新浪加v*/
 @property (weak, nonatomic) IBOutlet UIImageView *sina_vImageView;
+/** 帖子的文字内容*/
+@property (weak, nonatomic) IBOutlet UILabel *text_label;
 
 @end
 
@@ -52,6 +54,8 @@
     self.nameLabel.text = topic.name;
     self.createTimeLabel.text = topic.create_time;
     
+    self.text_label.text = topic.text;
+    
     //设置按钮的文字
     [self setupButtonTitle:self.dingButton count:topic.ding placeholder:@"顶"];
     [self setupButtonTitle:self.caiButton count:topic.cai placeholder:@"踩"];
@@ -69,11 +73,11 @@
 }
 
 -(void)setFrame:(CGRect)frame {
-    static CGFloat margin = 10;
-    frame.origin.x = margin;
-    frame.size.width -= 2 * margin;
-    frame.size.height -= margin;
-    frame.origin.y += margin;
+    
+    frame.origin.x = YMTopicCellMargin;
+    frame.size.width -= 2 * YMTopicCellMargin;
+    frame.size.height -= YMTopicCellMargin;
+    frame.origin.y += YMTopicCellMargin;
     
     [super setFrame:frame];
 }

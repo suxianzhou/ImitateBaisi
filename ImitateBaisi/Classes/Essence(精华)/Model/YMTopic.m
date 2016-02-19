@@ -8,8 +8,20 @@
 
 #import "YMTopic.h"
 #import "NSDate+YMExtension.h"
+#import <MJExtension.h>
 
-@implementation YMTopic
+@implementation YMTopic {
+    
+    CGFloat _cellHeight;
+}
+
++(NSDictionary *)mj_replacedKeyFromPropertyName {
+    return @{
+             @"small_image" : @"image0",
+             @"large_image" : @"image1",
+             @"middle_image" : @"image2",
+             };
+}
 
 -(NSString *)create_time  {
     NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
@@ -46,6 +58,19 @@
         fmt.dateFormat = @"yyyy-MM-dd HH:mm:ss";
         return [fmt stringFromDate:createDate];
     }
+}
+
+-(CGFloat)cellHeight {
+    if (!_cellHeight) {
+        // 文字的最大尺寸
+        CGSize maxSize = CGSizeMake([UIScreen mainScreen].bounds.size.width - 4 * YMTopicCellMargin, MAXFLOAT);
+        // 计算文字的高度
+        CGFloat textH = [self.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14]} context:nil].size.height;
+        
+        // cell的高度
+        _cellHeight = YMTopicCellTextY + textH + YMTopicCellBottomBarH + 2 * YMTopicCellMargin + self.height;
+    }
+    return _cellHeight;
 }
 
 @end

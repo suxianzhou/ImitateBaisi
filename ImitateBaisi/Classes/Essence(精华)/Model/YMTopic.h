@@ -6,7 +6,7 @@
 //  Copyright © 2016年 hrscy. All rights reserved.
 //  帖子
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface YMTopic : NSObject
 
@@ -28,5 +28,19 @@
 @property (nonatomic, assign) NSInteger comment;
 /** 是否是新浪加v用户*/
 @property (nonatomic, assign, getter=isSina_v) BOOL sina_v;
+/** 图片的宽度*/
+@property (nonatomic, assign) CGFloat width;
+/** 图片的高度*/
+@property (nonatomic, assign) CGFloat height;
+/** 小图片路径*/
+@property (nonatomic, copy) NSString *small_image;
+/** 大图片路径*/
+@property (nonatomic, copy) NSString *large_image;
+/** 中图片路径*/
+@property (nonatomic, copy) NSString *middle_image;
+
+/******** 额外属性 *********/
+/** cell的高度*/
+@property (nonatomic, assign, readonly) CGFloat cellHeight;
 
 @end
