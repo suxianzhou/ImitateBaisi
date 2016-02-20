@@ -9,7 +9,7 @@
 #import "YMTopicCell.h"
 #import "YMTopic.h"
 #import "UIImageView+WebCache.h"
-
+#import "YMTopicPictureView.h"
 
 @interface YMTopicCell ()
 /** 头像*/
@@ -31,6 +31,9 @@
 /** 帖子的文字内容*/
 @property (weak, nonatomic) IBOutlet UILabel *text_label;
 
+/** 图片帖子中间的内容*/
+@property (nonatomic, weak) YMTopicPictureView *pictureView;
+
 @end
 
 @implementation YMTopicCell
@@ -46,14 +49,26 @@
 
 }
 
+-(YMTopicPictureView *)pictureView{
+    if (_pictureView == nil) {
+        YMTopicPictureView *pictureView = [YMTopicPictureView pictureView];
+        [self.contentView addSubview:pictureView];
+        _pictureView = pictureView;
+    }
+    return _pictureView;
+}
+
 -(void)setTopic:(YMTopic *)topic {
     _topic = topic;
-    
+    //新浪加V
     self.sina_vImageView.hidden = !topic.sina_v;
+    //设置头像
     [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image]placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    //设置名字
     self.nameLabel.text = topic.name;
+    //设置帖子的创建时间
     self.createTimeLabel.text = topic.create_time;
-    
+    //设置帖子的文字内容
     self.text_label.text = topic.text;
     
     //设置按钮的文字
@@ -61,6 +76,15 @@
     [self setupButtonTitle:self.caiButton count:topic.cai placeholder:@"踩"];
     [self setupButtonTitle:self.shareButton count:topic.repost placeholder:@"分享"];
     [self setupButtonTitle:self.commentBuuton count:topic.comment placeholder:@"评论"];
+    
+    //根据模型类型（帖子类型）添加到对应的内容cell中间
+    if (topic.type == YMTopicTypePicture) { //图片帖子
+        self.pictureView.topic = topic;
+        self.pictureView.frame = topic.pictureF;
+    }  else if (topic.type == YMTopicTypeVoice) {
+        self.voiceView.topic = topic;
+        self.voiceView.frame = topic.voiceF;
+    }
 }
 
 -(void)setupButtonTitle:(UIButton *)button count:(NSInteger)count placeholder:(NSString *)placeholder {

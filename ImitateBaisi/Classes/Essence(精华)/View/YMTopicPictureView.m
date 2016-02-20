@@ -1,0 +1,41 @@
+//
+//  YMTopicPictureView.m
+//  ImitateBaisi
+//
+//  Created by 杨蒙 on 16/2/20.
+//  Copyright © 2016年 hrscy. All rights reserved.
+//
+
+#import "YMTopicPictureView.h"
+#import "YMTopic.h"
+#import "UIImageView+WebCache.h"
+
+@interface YMTopicPictureView ()
+/** 图片*/
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+/** gif图片*/
+@property (weak, nonatomic) IBOutlet UIImageView *gifView;
+/** 查看大图*/
+@property (weak, nonatomic) IBOutlet UIButton *seeBigButton;
+
+@end
+
+@implementation YMTopicPictureView
+
+-(void)awakeFromNib {
+    
+    //如果发现控件的位置和尺寸不是自己设置的，那么有可能是自动伸缩属性导致
+    self.autoresizingMask = UIViewAutoresizingNone;
+}
+
++(instancetype)pictureView {
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] lastObject];
+}
+
+-(void)setTopic:(YMTopic *)topic {
+    _topic = topic;
+    //设置图片
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:topic.large_image] placeholderImage:nil];
+}
+
+@end

@@ -42,5 +42,9 @@
 /******** 额外属性 *********/
 /** cell的高度*/
 @property (nonatomic, assign, readonly) CGFloat cellHeight;
+/** 帖子的类型*/
+@property (nonatomic, assign) YMTopicType type;
+/** 图片控件的frame*/
+@property (nonatomic, assign, readonly) CGRect pictureF;
 
 @end

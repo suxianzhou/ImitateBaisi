@@ -46,6 +46,8 @@
 		94FEF3671C70AC680001A8D1 /* YMTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FEF3661C70AC680001A8D1 /* YMTextField.m */; };
 		94FEF36A1C70C77E0001A8D1 /* YMPushGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FEF3691C70C77E0001A8D1 /* YMPushGuide.m */; };
 		94FEF36C1C70C78A0001A8D1 /* YMPushGuide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94FEF36B1C70C78A0001A8D1 /* YMPushGuide.xib */; };
+		94FF29111C78A61500DB5344 /* YMTopicPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FF29101C78A61500DB5344 /* YMTopicPictureView.m */; };
+		94FF29131C78A61F00DB5344 /* YMTopicPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94FF29121C78A61F00DB5344 /* YMTopicPictureView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +120,9 @@
 		94FEF3681C70C77E0001A8D1 /* YMPushGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMPushGuide.h; sourceTree = "<group>"; };
 		94FEF3691C70C77E0001A8D1 /* YMPushGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMPushGuide.m; sourceTree = "<group>"; };
 		94FEF36B1C70C78A0001A8D1 /* YMPushGuide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMPushGuide.xib; sourceTree = "<group>"; };
+		94FF290F1C78A61500DB5344 /* YMTopicPictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMTopicPictureView.h; sourceTree = "<group>"; };
+		94FF29101C78A61500DB5344 /* YMTopicPictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMTopicPictureView.m; sourceTree = "<group>"; };
+		94FF29121C78A61F00DB5344 /* YMTopicPictureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMTopicPictureView.xib; sourceTree = "<group>"; };
 		9E7D91F6AB0D576E1A4FF2F8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB61E360791935792A37A7BC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -234,6 +239,9 @@
 				948E27781C73050A00A85AE1 /* YMTopicCell.h */,
 				948E27791C73050A00A85AE1 /* YMTopicCell.m */,
 				948E277A1C73050A00A85AE1 /* YMTopicCell.xib */,
+				94FF290F1C78A61500DB5344 /* YMTopicPictureView.h */,
+				94FF29101C78A61500DB5344 /* YMTopicPictureView.m */,
+				94FF29121C78A61F00DB5344 /* YMTopicPictureView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -507,6 +515,7 @@
 				94E070A91C6E079500D8D3A8 /* YMFriendTrendsViewController.xib in Resources */,
 				94D05A2F1C706ADF005408A5 /* YMLoginRegisterController.xib in Resources */,
 				948E277C1C73050A00A85AE1 /* YMTopicCell.xib in Resources */,
+				94FF29131C78A61F00DB5344 /* YMTopicPictureView.xib in Resources */,
 				94D05A051C6F3575005408A5 /* YMRecommandTagCell.xib in Resources */,
 				945AEFC41C6ECB50003D7CEC /* YMRecommandUserCell.xib in Resources */,
 				94FEF36C1C70C78A0001A8D1 /* YMPushGuide.xib in Resources */,
@@ -572,6 +581,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94E070A41C6DD39800D8D3A8 /* main.m in Sources */,
+				94FF29111C78A61500DB5344 /* YMTopicPictureView.m in Sources */,
 				945AEFC71C6ED334003D7CEC /* YMRecommandUser.m in Sources */,
 				94E070AD1C6E11B100D8D3A8 /* YMRecommandViewController.m in Sources */,
 				94E070A11C6DD39800D8D3A8 /* YMMeViewController.m in Sources */,
