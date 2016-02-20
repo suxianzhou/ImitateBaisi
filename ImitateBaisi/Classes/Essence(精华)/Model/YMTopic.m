@@ -75,6 +75,11 @@
             CGFloat pictureW = maxSize.width;
             //图片显示出来的高度
             CGFloat pictureH = pictureW * self.height / self.width;
+            if (pictureH >= YMTopicCellPictureMaxH) { //图片高度过长
+                pictureH = YMTopicCellPictureBreakH;
+                self.bigPicture = YES;
+            }
+            
             //计算图片控件的frame
             CGFloat pictureX = YMTopicCellMargin;
             CGFloat pictureY = YMTopicCellTextY + textH + YMTopicCellMargin;

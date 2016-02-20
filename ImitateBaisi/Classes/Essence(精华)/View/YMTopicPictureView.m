@@ -34,8 +34,23 @@
 
 -(void)setTopic:(YMTopic *)topic {
     _topic = topic;
+    /**
+     *  判断图片是否为gif图片
+        取出图片的第一个字节，就可以判断出图片的真是类型。
+     */
     //设置图片
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:topic.large_image] placeholderImage:nil];
+    //判断是否为gif
+    NSString *extension = topic.large_image.pathExtension;
+    self.gifView.hidden = ![extension.lowercaseString isEqualToString:@"gif"];
+    //是否显示按钮"点击查看全图"
+    if (topic.isBigPicture) { //大图
+        self.seeBigButton.hidden = NO;
+        self.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    } else { //非大图
+        self.seeBigButton.hidden = YES;
+        self.imageView.contentMode = UIViewContentModeScaleToFill;
+    }
 }
 
 @end

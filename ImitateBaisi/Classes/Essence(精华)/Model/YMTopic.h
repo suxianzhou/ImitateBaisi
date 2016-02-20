@@ -46,5 +46,8 @@
 @property (nonatomic, assign) YMTopicType type;
 /** 图片控件的frame*/
 @property (nonatomic, assign, readonly) CGRect pictureF;
+/** 图片控件的frame*/
+@property (nonatomic, assign, getter=isBigPicture) BOOL bigPicture;
+
 
 @end
