@@ -9,6 +9,7 @@
 #import "YMTopicPictureView.h"
 #import "YMTopic.h"
 #import "UIImageView+WebCache.h"
+#import "DALabeledCircularProgressView.h"
 
 @interface YMTopicPictureView ()
 /** 图片*/
@@ -18,6 +19,8 @@
 /** 查看大图*/
 @property (weak, nonatomic) IBOutlet UIButton *seeBigButton;
 
+@property (weak, nonatomic) IBOutlet DALabeledCircularProgressView *progressView;
+
 @end
 
 @implementation YMTopicPictureView
@@ -26,6 +29,8 @@
     
     //如果发现控件的位置和尺寸不是自己设置的，那么有可能是自动伸缩属性导致
     self.autoresizingMask = UIViewAutoresizingNone;
+    self.progressView.roundedCorners = 2;
+    self.progressView.progressLabel.textColor = [UIColor whiteColor];
 }
 
 +(instancetype)pictureView {
@@ -39,7 +44,14 @@
         取出图片的第一个字节，就可以判断出图片的真是类型。
      */
     //设置图片
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:topic.large_image] placeholderImage:nil];
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:topic.large_image] placeholderImage:nil options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        self.progressView.hidden = NO;
+        CGFloat progress = 1.0 * receivedSize / expectedSize;
+        [self.progressView setProgress:progress];
+         self.progressView.progressLabel.text = [NSString stringWithFormat:@"%.0f%%", progress * 100];
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        self.progressView.hidden = YES;
+    }];
     //判断是否为gif
     NSString *extension = topic.large_image.pathExtension;
     self.gifView.hidden = ![extension.lowercaseString isEqualToString:@"gif"];

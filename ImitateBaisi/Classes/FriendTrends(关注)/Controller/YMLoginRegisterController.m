@@ -38,6 +38,7 @@
 -(UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
+
 - (IBAction)showLoginOrRegister:(UIButton *)sender {
     //退出键盘
     [self.view endEditing:YES];
