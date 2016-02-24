@@ -9,7 +9,8 @@
 #import "YMTopicPictureView.h"
 #import "YMTopic.h"
 #import "UIImageView+WebCache.h"
-#import "DALabeledCircularProgressView.h"
+#import "YMShowPictureViewController.h"
+#import "YMProgressView.h"
 
 @interface YMTopicPictureView ()
 /** 图片*/
@@ -19,7 +20,7 @@
 /** 查看大图*/
 @property (weak, nonatomic) IBOutlet UIButton *seeBigButton;
 
-@property (weak, nonatomic) IBOutlet DALabeledCircularProgressView *progressView;
+@property (weak, nonatomic) IBOutlet YMProgressView *progressView;
 
 @end
 
@@ -29,8 +30,13 @@
     
     //如果发现控件的位置和尺寸不是自己设置的，那么有可能是自动伸缩属性导致
     self.autoresizingMask = UIViewAutoresizingNone;
-    self.progressView.roundedCorners = 2;
-    self.progressView.progressLabel.textColor = [UIColor whiteColor];
+    self.imageView.userInteractionEnabled = YES;
+    [self.imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showPicture)] ];
+}
+
+-(void)showPicture {
+    YMShowPictureViewController *showPictureVC = [[YMShowPictureViewController alloc] init];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:showPictureVC animated:YES completion:nil];    
 }
 
 +(instancetype)pictureView {
@@ -47,8 +53,8 @@
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:topic.large_image] placeholderImage:nil options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
         self.progressView.hidden = NO;
         CGFloat progress = 1.0 * receivedSize / expectedSize;
-        [self.progressView setProgress:progress];
-         self.progressView.progressLabel.text = [NSString stringWithFormat:@"%.0f%%", progress * 100];
+        progress = (progress < 0 ? 0 : progress);
+        [self.progressView setProgress:progress animated:YES];
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         self.progressView.hidden = YES;
     }];

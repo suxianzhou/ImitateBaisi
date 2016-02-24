@@ -20,6 +20,9 @@
 		948E277B1C73050A00A85AE1 /* YMTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 948E27791C73050A00A85AE1 /* YMTopicCell.m */; };
 		948E277C1C73050A00A85AE1 /* YMTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 948E277A1C73050A00A85AE1 /* YMTopicCell.xib */; };
 		948E277F1C7330DD00A85AE1 /* NSDate+YMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 948E277E1C7330DD00A85AE1 /* NSDate+YMExtension.m */; };
+		94C811151C7DFA4B00BEA7D2 /* YMShowPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C811131C7DFA4B00BEA7D2 /* YMShowPictureViewController.m */; };
+		94C811161C7DFA4B00BEA7D2 /* YMShowPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94C811141C7DFA4B00BEA7D2 /* YMShowPictureViewController.xib */; };
+		94C811191C7DFD8E00BEA7D2 /* YMProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C811181C7DFD8E00BEA7D2 /* YMProgressView.m */; };
 		94D059FD1C6F324D005408A5 /* YMRecommandTagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D059FC1C6F324D005408A5 /* YMRecommandTagsViewController.m */; };
 		94D05A001C6F3455005408A5 /* YMRecommandTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D059FF1C6F3455005408A5 /* YMRecommandTag.m */; };
 		94D05A041C6F3575005408A5 /* YMRecommandTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D05A021C6F3575005408A5 /* YMRecommandTagCell.m */; };
@@ -74,6 +77,11 @@
 		948E277A1C73050A00A85AE1 /* YMTopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMTopicCell.xib; sourceTree = "<group>"; };
 		948E277D1C7330DD00A85AE1 /* NSDate+YMExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+YMExtension.h"; sourceTree = "<group>"; };
 		948E277E1C7330DD00A85AE1 /* NSDate+YMExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YMExtension.m"; sourceTree = "<group>"; };
+		94C811121C7DFA4B00BEA7D2 /* YMShowPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMShowPictureViewController.h; sourceTree = "<group>"; };
+		94C811131C7DFA4B00BEA7D2 /* YMShowPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMShowPictureViewController.m; sourceTree = "<group>"; };
+		94C811141C7DFA4B00BEA7D2 /* YMShowPictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMShowPictureViewController.xib; sourceTree = "<group>"; };
+		94C811171C7DFD8E00BEA7D2 /* YMProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMProgressView.h; sourceTree = "<group>"; };
+		94C811181C7DFD8E00BEA7D2 /* YMProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMProgressView.m; sourceTree = "<group>"; };
 		94D059FB1C6F324D005408A5 /* YMRecommandTagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRecommandTagsViewController.h; sourceTree = "<group>"; };
 		94D059FC1C6F324D005408A5 /* YMRecommandTagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMRecommandTagsViewController.m; sourceTree = "<group>"; };
 		94D059FE1C6F3455005408A5 /* YMRecommandTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRecommandTag.h; sourceTree = "<group>"; };
@@ -215,6 +223,9 @@
 				94D059FC1C6F324D005408A5 /* YMRecommandTagsViewController.m */,
 				944E60CC1C774A8900B72EDF /* YMTopicViewController.h */,
 				944E60CD1C774A8900B72EDF /* YMTopicViewController.m */,
+				94C811121C7DFA4B00BEA7D2 /* YMShowPictureViewController.h */,
+				94C811131C7DFA4B00BEA7D2 /* YMShowPictureViewController.m */,
+				94C811141C7DFA4B00BEA7D2 /* YMShowPictureViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -242,6 +253,8 @@
 				94FF290F1C78A61500DB5344 /* YMTopicPictureView.h */,
 				94FF29101C78A61500DB5344 /* YMTopicPictureView.m */,
 				94FF29121C78A61F00DB5344 /* YMTopicPictureView.xib */,
+				94C811171C7DFD8E00BEA7D2 /* YMProgressView.h */,
+				94C811181C7DFD8E00BEA7D2 /* YMProgressView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -519,6 +532,7 @@
 				94D05A051C6F3575005408A5 /* YMRecommandTagCell.xib in Resources */,
 				945AEFC41C6ECB50003D7CEC /* YMRecommandUserCell.xib in Resources */,
 				94FEF36C1C70C78A0001A8D1 /* YMPushGuide.xib in Resources */,
+				94C811161C7DFA4B00BEA7D2 /* YMShowPictureViewController.xib in Resources */,
 				94E070AE1C6E11B100D8D3A8 /* YMRecommandViewController.xib in Resources */,
 				945AEFBF1C6EAF89003D7CEC /* YMRecommandCategoryCell.xib in Resources */,
 				942685571C6D77E40072099B /* Assets.xcassets in Resources */,
@@ -581,12 +595,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				94E070A41C6DD39800D8D3A8 /* main.m in Sources */,
+				94C811191C7DFD8E00BEA7D2 /* YMProgressView.m in Sources */,
 				94FF29111C78A61500DB5344 /* YMTopicPictureView.m in Sources */,
 				945AEFC71C6ED334003D7CEC /* YMRecommandUser.m in Sources */,
 				94E070AD1C6E11B100D8D3A8 /* YMRecommandViewController.m in Sources */,
 				94E070A11C6DD39800D8D3A8 /* YMMeViewController.m in Sources */,
 				948E277F1C7330DD00A85AE1 /* NSDate+YMExtension.m in Sources */,
 				94FEF36A1C70C77E0001A8D1 /* YMPushGuide.m in Sources */,
+				94C811151C7DFA4B00BEA7D2 /* YMShowPictureViewController.m in Sources */,
 				94D059FD1C6F324D005408A5 /* YMRecommandTagsViewController.m in Sources */,
 				94D05A001C6F3455005408A5 /* YMRecommandTag.m in Sources */,
 				94E0709D1C6DD39800D8D3A8 /* UIBarButtonItem+YMExtension.m in Sources */,
