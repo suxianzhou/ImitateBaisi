@@ -36,6 +36,7 @@
 
 -(void)showPicture {
     YMShowPictureViewController *showPictureVC = [[YMShowPictureViewController alloc] init];
+    showPictureVC.topic = self.topic;
     [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:showPictureVC animated:YES completion:nil];    
 }
 
@@ -54,7 +55,7 @@
         self.progressView.hidden = NO;
         CGFloat progress = 1.0 * receivedSize / expectedSize;
         progress = (progress < 0 ? 0 : progress);
-        [self.progressView setProgress:progress animated:YES];
+        [self.progressView setProgress:progress animated:NO];
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         self.progressView.hidden = YES;
     }];

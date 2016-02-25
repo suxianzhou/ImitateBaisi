@@ -68,8 +68,9 @@
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "40x40",
+      "idiom" : "ipad",
+      "filename" : "AppIcon40x40@2x.png",
       "scale" : "2x"
     },
     {
@@ -138,10 +139,16 @@
     {
       "size" : "40x40",
       "idiom" : "watch",
-      "filename" : "AppIcon40x40@2x.png",
       "scale" : "2x",
       "role" : "appLauncher",
       "subtype" : "38mm"
+    },
+    {
+      "size" : "44x44",
+      "idiom" : "watch",
+      "scale" : "2x",
+      "role" : "longLook",
+      "subtype" : "42mm"
     },
     {
       "size" : "86x86",

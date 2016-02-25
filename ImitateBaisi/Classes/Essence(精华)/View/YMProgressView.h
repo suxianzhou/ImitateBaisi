@@ -6,8 +6,8 @@
 //  Copyright © 2016年 hrscy. All rights reserved.
 //
 
-#import "M13ProgressViewRing.h"
+#import "DALabeledCircularProgressView.h"
 
-@interface YMProgressView : M13ProgressViewRing
+@interface YMProgressView : DALabeledCircularProgressView
 
 @end
