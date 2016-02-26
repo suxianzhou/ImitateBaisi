@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YMShowPictureViewController">
             <connections>
+                <outlet property="progressView" destination="3xc-cB-jEh" id="x3X-se-43u"/>
                 <outlet property="scrollView" destination="xKj-vj-OiA" id="DTA-UM-0rR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -56,6 +57,15 @@
                         <action selector="save:" destination="-1" eventType="touchUpInside" id="cI7-cy-fg6"/>
                     </connections>
                 </button>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xc-cB-jEh" customClass="YMProgressView">
+                    <rect key="frame" x="250" y="250" width="100" height="100"/>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="BFY-3e-ZF4"/>
+                        <constraint firstAttribute="width" constant="100" id="kGT-I1-KBe"/>
+                    </constraints>
+                </view>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -66,12 +76,14 @@
                 <constraint firstItem="wFL-QF-ElK" firstAttribute="leading" secondItem="3hg-cz-28C" secondAttribute="trailing" constant="10" id="WD6-GJ-Wlh"/>
                 <constraint firstItem="2Ez-iU-VeY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="aYN-Hd-FgP"/>
                 <constraint firstAttribute="bottom" secondItem="xKj-vj-OiA" secondAttribute="bottom" id="bTM-p7-bPe"/>
+                <constraint firstItem="3xc-cB-jEh" firstAttribute="centerY" secondItem="xKj-vj-OiA" secondAttribute="centerY" id="e7b-Th-vgR"/>
                 <constraint firstItem="xKj-vj-OiA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fd7-7O-tDu"/>
                 <constraint firstAttribute="trailing" secondItem="wFL-QF-ElK" secondAttribute="trailing" constant="20" id="ftB-XZ-Mvg"/>
                 <constraint firstItem="3hg-cz-28C" firstAttribute="top" secondItem="wFL-QF-ElK" secondAttribute="top" id="lnD-7D-io9"/>
                 <constraint firstItem="wFL-QF-ElK" firstAttribute="width" secondItem="3hg-cz-28C" secondAttribute="width" id="owW-wa-jAb"/>
                 <constraint firstItem="2Ez-iU-VeY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="rKJ-aa-mS3"/>
                 <constraint firstItem="wFL-QF-ElK" firstAttribute="height" secondItem="3hg-cz-28C" secondAttribute="height" id="yso-ed-PeB"/>
+                <constraint firstItem="3xc-cB-jEh" firstAttribute="centerX" secondItem="xKj-vj-OiA" secondAttribute="centerX" id="z6B-MT-tYt"/>
             </constraints>
         </view>
     </objects>
