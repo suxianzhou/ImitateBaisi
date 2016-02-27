@@ -7,6 +7,7 @@
 //
 
 #import "YMTabBar.h"
+#import "YMPublishViewController.h"
 
 @interface YMTabBar ()
 
@@ -26,11 +27,17 @@
         UIButton *publishButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [publishButton setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:UIControlStateNormal];
         [publishButton setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateSelected];
+        [publishButton addTarget:self action:@selector(publishButtonClick) forControlEvents:UIControlEventTouchUpInside];
         publishButton.size = publishButton.currentBackgroundImage.size;
         [self addSubview:publishButton];
         self.publishButton = publishButton;
     }
     return self;
+}
+
+-(void)publishButtonClick {
+    YMPublishViewController *publishVC = [[YMPublishViewController alloc] init];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:publishVC animated:NO completion:nil];
 }
 
 -(void)layoutSubviews {

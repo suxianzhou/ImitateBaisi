@@ -32,20 +32,17 @@
     [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backButton:)]];
     [self.scrollView addSubview:imageView];
     self.imageView = imageView;
-    //屏幕尺寸
-    CGFloat screenW = [UIScreen mainScreen].bounds.size.width;
-    CGFloat screenH = [UIScreen mainScreen].bounds.size.height;
     //图片尺寸
-    CGFloat pictureW = screenW;
+    CGFloat pictureW = SCREENW;
     CGFloat pictureH = pictureW * self.topic.height / self.topic.width;
-    if (pictureH > screenH) {
+    if (pictureH > SCREENH) {
         //图片显示高度超过一个屏幕,屏幕需要滚动查看
         self.imageView.frame = CGRectMake(0, 0, pictureW, pictureH);
         self.scrollView.contentSize = CGSizeMake(pictureW, pictureH);
         
     } else {
         self.imageView.size = CGSizeMake(pictureW, pictureH);
-        self.imageView.centerY = screenH * 0.5;
+        self.imageView.centerY = SCREENH * 0.5;
     }
     //马上显示当前图片的下载进度
     [self.progressView setProgress:self.topic.pictureProgress animated:NO];
