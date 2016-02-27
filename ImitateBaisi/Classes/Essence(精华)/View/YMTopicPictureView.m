@@ -61,6 +61,10 @@
         [self.progressView setProgress:topic.pictureProgress animated:NO];
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         self.progressView.hidden = YES;
+        
+        if (topic.isBigPicture == NO) return ;
+        
+        [self.imageView setNeedsDisplay];
     }];
     //判断是否为gif
     NSString *extension = topic.large_image.pathExtension;
@@ -68,10 +72,8 @@
     //是否显示按钮"点击查看全图"
     if (topic.isBigPicture) { //大图
         self.seeBigButton.hidden = NO;
-        self.imageView.contentMode = UIViewContentModeScaleAspectFill;
     } else { //非大图
         self.seeBigButton.hidden = YES;
-        self.imageView.contentMode = UIViewContentModeScaleToFill;
     }
 }
 
