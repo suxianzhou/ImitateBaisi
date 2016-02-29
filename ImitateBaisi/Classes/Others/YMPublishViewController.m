@@ -39,6 +39,7 @@
         [button setImage:[UIImage imageNamed:images[i]] forState:UIControlStateNormal];
         [button setTitle:titles[i] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont systemFontOfSize:14];
         //设置frame
         button.width = buttonW;
         button.height = buttonH;

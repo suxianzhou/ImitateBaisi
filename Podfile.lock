@@ -18,6 +18,7 @@ PODS:
   - M13ProgressSuite (1.2.7)
   - MJExtension (3.0.10)
   - MJRefresh (3.1.0)
+  - pop (1.0.9)
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - M13ProgressSuite
   - MJExtension
   - MJRefresh
+  - pop
   - SDWebImage
   - SVProgressHUD
 
@@ -38,6 +40,7 @@ SPEC CHECKSUMS:
   M13ProgressSuite: 03d194af6359da440641ba758aed5a18b0386a86
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
 
