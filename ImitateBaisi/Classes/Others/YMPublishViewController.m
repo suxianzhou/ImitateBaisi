@@ -86,8 +86,27 @@ static CGFloat const YMAnimationSpringFactor = 8;
 }
 
 - (IBAction)cancel {
-    self.view.userInteractionEnabled = YES;
-    [self dismissViewControllerAnimated:NO completion:nil];
+    int beginIndex = 2;
+    
+    for (int i = beginIndex; i < self.view.subviews.count; i++) {
+        UIView *subview = self.view.subviews[i];
+        
+        //添加动画
+        POPBasicAnimation *animation = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
+        CGFloat centerY = subview.centerY + SCREENH;
+        animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+        animation.toValue = [NSValue valueWithCGPoint:CGPointMake(subview.centerX, centerY)];
+        animation.beginTime = CACurrentMediaTime() + YMAnimationDelay * (i - beginIndex);
+        [subview pop_addAnimation:animation forKey:nil];
+        
+        //监听最后一个动画
+        if (i == self.view.subviews.count - 1) {
+            [animation setCompletionBlock:^(POPAnimation *animation, BOOL finish) {
+                [self dismissViewControllerAnimated:NO completion:nil];
+            }];
+        }
+        
+    }
 }
 
 @end
