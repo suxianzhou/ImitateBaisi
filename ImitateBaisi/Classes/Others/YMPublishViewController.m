@@ -14,7 +14,8 @@ static CGFloat const YMAnimationDelay = 0.1;
 static CGFloat const YMAnimationSpringFactor = 8;
 
 @interface YMPublishViewController ()
-
+/** */
+@property (nonatomic, copy) void (^completionBlock)();
 @end
 
 @implementation YMPublishViewController
@@ -38,6 +39,8 @@ static CGFloat const YMAnimationSpringFactor = 8;
     for (int i = 0; i < 6; i++) {
         YMVerticalButton *button = [[YMVerticalButton alloc] init];
         [self.view addSubview:button];
+        
+        [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         
         [button setImage:[UIImage imageNamed:images[i]] forState:UIControlStateNormal];
         [button setTitle:titles[i] forState:UIControlStateNormal];
@@ -80,12 +83,29 @@ static CGFloat const YMAnimationSpringFactor = 8;
     
 }
 
+-(void)buttonClick:(UIButton *)button {
+    
+    [self cancelWithCompletionBlock:^(int a, int b) {
+        
+    }];
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)cancel {
+    [self cancelWithCompletionBlock:nil];
+    
+    
+}
+
+#pragma mark 先执行退出动画，动画完成后执行completionBlock
+-(void)cancelWithCompletionBlock:(void(^)())completionBlock {
+    
+    self.view.userInteractionEnabled = NO;
     int beginIndex = 2;
     
     for (int i = beginIndex; i < self.view.subviews.count; i++) {
@@ -103,10 +123,18 @@ static CGFloat const YMAnimationSpringFactor = 8;
         if (i == self.view.subviews.count - 1) {
             [animation setCompletionBlock:^(POPAnimation *animation, BOOL finish) {
                 [self dismissViewControllerAnimated:NO completion:nil];
+//                if (completionBlock) {
+//                    completionBlock();
+//                }
+                !completionBlock ? : completionBlock();
             }];
         }
         
     }
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self cancelWithCompletionBlock:nil];
 }
 
 @end
