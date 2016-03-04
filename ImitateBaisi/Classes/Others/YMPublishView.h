@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YMPublishViewController : UIViewController
+@interface YMPublishView : UIView
+
++(instancetype)publishView;
 
 @end

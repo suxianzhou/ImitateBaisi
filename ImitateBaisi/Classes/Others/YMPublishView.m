@@ -6,24 +6,29 @@
 //  Copyright © 2016年 hrscy. All rights reserved.
 //
 
-#import "YMPublishViewController.h"
+#import "YMPublishView.h"
 #import "YMVerticalButton.h"
 #import "POP.h"
+#define YMRootView [UIApplication sharedApplication].keyWindow.rootViewController.view
 
 static CGFloat const YMAnimationDelay = 0.1;
 static CGFloat const YMAnimationSpringFactor = 8;
 
-@interface YMPublishViewController ()
+@interface YMPublishView ()
 /** */
 @property (nonatomic, copy) void (^completionBlock)();
 @end
 
-@implementation YMPublishViewController
+@implementation YMPublishView
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
++(instancetype)publishView {
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] lastObject];
+}
+
+- (void)awakeFromNib {
     //设置控制器的view不能被点击
-    self.view.userInteractionEnabled = NO;
+    YMRootView.userInteractionEnabled = NO;
+    self.userInteractionEnabled = NO;
     
     // 数据
     NSArray *images = @[@"publish-video", @"publish-picture", @"publish-text", @"publish-audio", @"publish-review", @"publish-offline"];
@@ -38,7 +43,7 @@ static CGFloat const YMAnimationSpringFactor = 8;
     CGFloat xMargin = (SCREENW - 2 * buttonStartX - maxCols * buttonW) / (maxCols - 1);
     for (int i = 0; i < 6; i++) {
         YMVerticalButton *button = [[YMVerticalButton alloc] init];
-        [self.view addSubview:button];
+        [self addSubview:button];
         
         [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -66,7 +71,7 @@ static CGFloat const YMAnimationSpringFactor = 8;
     
     //添加标语
     UIImageView *sloganView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_slogan"]];
-    [self.view addSubview:sloganView];
+    [self addSubview:sloganView];
     
     POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewCenter];
     CGFloat centerX = SCREENW * 0.5;
@@ -77,7 +82,9 @@ static CGFloat const YMAnimationSpringFactor = 8;
     animation.beginTime = CACurrentMediaTime() + YMAnimationDelay * images.count;
     [animation setCompletionBlock:^(POPAnimation *animation, BOOL finish) {
         //回复点击事件
-        self.view.userInteractionEnabled = YES;
+        //设置控制器的view不能被点击
+        YMRootView.userInteractionEnabled = YES;
+        self.userInteractionEnabled = YES;
     }];
     [sloganView pop_addAnimation:animation forKey:nil];
     
@@ -91,11 +98,6 @@ static CGFloat const YMAnimationSpringFactor = 8;
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)cancel {
     [self cancelWithCompletionBlock:nil];
     
@@ -105,11 +107,13 @@ static CGFloat const YMAnimationSpringFactor = 8;
 #pragma mark 先执行退出动画，动画完成后执行completionBlock
 -(void)cancelWithCompletionBlock:(void(^)())completionBlock {
     
-    self.view.userInteractionEnabled = NO;
-    int beginIndex = 2;
+    //设置控制器的view不能被点击
+    YMRootView.userInteractionEnabled = NO;
     
-    for (int i = beginIndex; i < self.view.subviews.count; i++) {
-        UIView *subview = self.view.subviews[i];
+    int beginIndex = 1;
+    
+    for (int i = beginIndex; i < self.subviews.count; i++) {
+        UIView *subview = self.subviews[i];
         
         //添加动画
         POPBasicAnimation *animation = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
@@ -120,12 +124,13 @@ static CGFloat const YMAnimationSpringFactor = 8;
         [subview pop_addAnimation:animation forKey:nil];
         
         //监听最后一个动画
-        if (i == self.view.subviews.count - 1) {
+        if (i == self.subviews.count - 1) {
             [animation setCompletionBlock:^(POPAnimation *animation, BOOL finish) {
-                [self dismissViewControllerAnimated:NO completion:nil];
-//                if (completionBlock) {
-//                    completionBlock();
-//                }
+                //设置控制器的view不能被点击
+                YMRootView.userInteractionEnabled = YES;
+                self.userInteractionEnabled = YES;
+                [self removeFromSuperview];
+                
                 !completionBlock ? : completionBlock();
             }];
         }

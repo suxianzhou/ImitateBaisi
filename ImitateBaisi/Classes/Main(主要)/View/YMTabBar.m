@@ -7,7 +7,7 @@
 //
 
 #import "YMTabBar.h"
-#import "YMPublishViewController.h"
+#import "YMPublishView.h"
 
 @interface YMTabBar ()
 
@@ -36,8 +36,11 @@
 }
 
 -(void)publishButtonClick {
-    YMPublishViewController *publishVC = [[YMPublishViewController alloc] init];
-    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:publishVC animated:NO completion:nil];
+    YMPublishView *publish = [YMPublishView publishView];
+//    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:publishVC animated:NO completion:nil];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    publish.frame = window.bounds;
+    [window addSubview:publish];
 }
 
 -(void)layoutSubviews {
