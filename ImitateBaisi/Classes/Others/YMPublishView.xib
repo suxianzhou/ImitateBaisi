@@ -26,7 +26,7 @@
                 </button>
             </subviews>
             <animations/>
-            <color key="backgroundColor" white="0.0" alpha="0.30096600506756754" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="VLe-32-Vss" secondAttribute="bottom" constant="30" id="HnO-EP-AGP"/>
                 <constraint firstItem="VLe-32-Vss" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sAt-qi-T0r"/>

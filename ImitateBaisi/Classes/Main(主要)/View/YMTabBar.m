@@ -36,11 +36,13 @@
 }
 
 -(void)publishButtonClick {
-    YMPublishView *publish = [YMPublishView publishView];
-//    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:publishVC animated:NO completion:nil];
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    publish.frame = window.bounds;
-    [window addSubview:publish];
+    [YMPublishView show];
+//    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+//    publish.frame = window.bounds;
+//    [window addSubview:publish];
+
+    
+    
 }
 
 -(void)layoutSubviews {

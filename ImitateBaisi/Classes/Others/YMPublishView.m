@@ -9,7 +9,6 @@
 #import "YMPublishView.h"
 #import "YMVerticalButton.h"
 #import "POP.h"
-#define YMRootView [UIApplication sharedApplication].keyWindow.rootViewController.view
 
 static CGFloat const YMAnimationDelay = 0.1;
 static CGFloat const YMAnimationSpringFactor = 8;
@@ -21,13 +20,26 @@ static CGFloat const YMAnimationSpringFactor = 8;
 
 @implementation YMPublishView
 
+static UIWindow *window_;
+
++(void)show {
+    //1.创建窗口
+    window_ = [[UIWindow alloc] init];
+    window_.frame = [UIScreen mainScreen].bounds;
+    window_.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.6];
+    window_.hidden = NO;
+    
+    YMPublishView *publishView = [YMPublishView publishView];
+    publishView.frame = window_.bounds;
+    [window_ addSubview:publishView];
+}
+
 +(instancetype)publishView {
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] lastObject];
 }
 
 - (void)awakeFromNib {
     //设置控制器的view不能被点击
-    YMRootView.userInteractionEnabled = NO;
     self.userInteractionEnabled = NO;
     
     // 数据
@@ -81,9 +93,7 @@ static CGFloat const YMAnimationSpringFactor = 8;
     animation.toValue = [NSValue valueWithCGPoint:CGPointMake(centerX, centerEndY)];
     animation.beginTime = CACurrentMediaTime() + YMAnimationDelay * images.count;
     [animation setCompletionBlock:^(POPAnimation *animation, BOOL finish) {
-        //回复点击事件
         //设置控制器的view不能被点击
-        YMRootView.userInteractionEnabled = YES;
         self.userInteractionEnabled = YES;
     }];
     [sloganView pop_addAnimation:animation forKey:nil];
@@ -92,7 +102,7 @@ static CGFloat const YMAnimationSpringFactor = 8;
 
 -(void)buttonClick:(UIButton *)button {
     
-    [self cancelWithCompletionBlock:^(int a, int b) {
+    [self cancelWithCompletionBlock:^{
         
     }];
     
@@ -100,15 +110,13 @@ static CGFloat const YMAnimationSpringFactor = 8;
 
 - (IBAction)cancel {
     [self cancelWithCompletionBlock:nil];
-    
-    
 }
 
 #pragma mark 先执行退出动画，动画完成后执行completionBlock
 -(void)cancelWithCompletionBlock:(void(^)())completionBlock {
     
     //设置控制器的view不能被点击
-    YMRootView.userInteractionEnabled = NO;
+    self.userInteractionEnabled = NO;
     
     int beginIndex = 1;
     
@@ -126,11 +134,9 @@ static CGFloat const YMAnimationSpringFactor = 8;
         //监听最后一个动画
         if (i == self.subviews.count - 1) {
             [animation setCompletionBlock:^(POPAnimation *animation, BOOL finish) {
-                //设置控制器的view不能被点击
-                YMRootView.userInteractionEnabled = YES;
-                self.userInteractionEnabled = YES;
-                [self removeFromSuperview];
-                
+                //销毁窗口
+                window_.hidden = YES;
+                window_ = nil;
                 !completionBlock ? : completionBlock();
             }];
         }

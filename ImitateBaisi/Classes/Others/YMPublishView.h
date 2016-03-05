@@ -10,6 +10,6 @@
 
 @interface YMPublishView : UIView
 
-+(instancetype)publishView;
++(void)show;
 
 @end
