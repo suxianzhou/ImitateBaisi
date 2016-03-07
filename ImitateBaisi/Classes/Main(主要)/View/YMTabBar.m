@@ -37,12 +37,6 @@
 
 -(void)publishButtonClick {
     [YMPublishView show];
-//    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-//    publish.frame = window.bounds;
-//    [window addSubview:publish];
-
-    
-    
 }
 
 -(void)layoutSubviews {

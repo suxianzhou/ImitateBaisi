@@ -101,7 +101,6 @@ static UIWindow *window_;
 }
 
 -(void)buttonClick:(UIButton *)button {
-    
     [self cancelWithCompletionBlock:^{
         
     }];
@@ -140,7 +139,6 @@ static UIWindow *window_;
                 !completionBlock ? : completionBlock();
             }];
         }
-        
     }
 }
 
