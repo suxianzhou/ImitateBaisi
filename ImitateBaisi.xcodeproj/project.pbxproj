@@ -20,6 +20,8 @@
 		948E277B1C73050A00A85AE1 /* YMTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 948E27791C73050A00A85AE1 /* YMTopicCell.m */; };
 		948E277C1C73050A00A85AE1 /* YMTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 948E277A1C73050A00A85AE1 /* YMTopicCell.xib */; };
 		948E277F1C7330DD00A85AE1 /* NSDate+YMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 948E277E1C7330DD00A85AE1 /* NSDate+YMExtension.m */; };
+		94B967861C8DD31700807036 /* YMVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B967851C8DD31700807036 /* YMVoiceView.m */; };
+		94B967881C8DD32200807036 /* YMVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B967871C8DD32200807036 /* YMVoiceView.xib */; };
 		94C811151C7DFA4B00BEA7D2 /* YMShowPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C811131C7DFA4B00BEA7D2 /* YMShowPictureViewController.m */; };
 		94C811161C7DFA4B00BEA7D2 /* YMShowPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94C811141C7DFA4B00BEA7D2 /* YMShowPictureViewController.xib */; };
 		94C811191C7DFD8E00BEA7D2 /* YMProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C811181C7DFD8E00BEA7D2 /* YMProgressView.m */; };
@@ -79,6 +81,9 @@
 		948E277A1C73050A00A85AE1 /* YMTopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMTopicCell.xib; sourceTree = "<group>"; };
 		948E277D1C7330DD00A85AE1 /* NSDate+YMExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+YMExtension.h"; sourceTree = "<group>"; };
 		948E277E1C7330DD00A85AE1 /* NSDate+YMExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YMExtension.m"; sourceTree = "<group>"; };
+		94B967841C8DD31700807036 /* YMVoiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMVoiceView.h; sourceTree = "<group>"; };
+		94B967851C8DD31700807036 /* YMVoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMVoiceView.m; sourceTree = "<group>"; };
+		94B967871C8DD32200807036 /* YMVoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMVoiceView.xib; sourceTree = "<group>"; };
 		94C811121C7DFA4B00BEA7D2 /* YMShowPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMShowPictureViewController.h; sourceTree = "<group>"; };
 		94C811131C7DFA4B00BEA7D2 /* YMShowPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMShowPictureViewController.m; sourceTree = "<group>"; };
 		94C811141C7DFA4B00BEA7D2 /* YMShowPictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMShowPictureViewController.xib; sourceTree = "<group>"; };
@@ -260,6 +265,9 @@
 				94FF29121C78A61F00DB5344 /* YMTopicPictureView.xib */,
 				94C811171C7DFD8E00BEA7D2 /* YMProgressView.h */,
 				94C811181C7DFD8E00BEA7D2 /* YMProgressView.m */,
+				94B967841C8DD31700807036 /* YMVoiceView.h */,
+				94B967851C8DD31700807036 /* YMVoiceView.m */,
+				94B967871C8DD32200807036 /* YMVoiceView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -544,6 +552,7 @@
 				94E888B31C81DDB900842458 /* YMPublishView.xib in Resources */,
 				94E070AE1C6E11B100D8D3A8 /* YMRecommandViewController.xib in Resources */,
 				945AEFBF1C6EAF89003D7CEC /* YMRecommandCategoryCell.xib in Resources */,
+				94B967881C8DD32200807036 /* YMVoiceView.xib in Resources */,
 				942685571C6D77E40072099B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,6 +613,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94E070A41C6DD39800D8D3A8 /* main.m in Sources */,
+				94B967861C8DD31700807036 /* YMVoiceView.m in Sources */,
 				94C811191C7DFD8E00BEA7D2 /* YMProgressView.m in Sources */,
 				94FF29111C78A61500DB5344 /* YMTopicPictureView.m in Sources */,
 				945AEFC71C6ED334003D7CEC /* YMRecommandUser.m in Sources */,
