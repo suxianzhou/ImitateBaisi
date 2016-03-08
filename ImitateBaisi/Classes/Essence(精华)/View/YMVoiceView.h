@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@class YMTopic;
 
 @interface YMVoiceView : UIView
+
+/** topic*/
+@property (nonatomic, strong) YMTopic *topic;
+
++(instancetype)voiceView;
+
 
 @end

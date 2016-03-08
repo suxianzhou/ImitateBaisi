@@ -10,6 +10,7 @@
 #import "YMTopic.h"
 #import "UIImageView+WebCache.h"
 #import "YMTopicPictureView.h"
+#import "YMVoiceView.h"
 
 @interface YMTopicCell ()
 /** 头像*/
@@ -33,6 +34,8 @@
 
 /** 图片帖子中间的内容*/
 @property (nonatomic, weak) YMTopicPictureView *pictureView;
+/** 声音帖子中间的内容*/
+@property (nonatomic, weak) YMVoiceView *voiceView;
 
 @end
 
@@ -47,6 +50,15 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
+}
+
+-(YMVoiceView *)voiceView{
+    if (_voiceView == nil) {
+        YMVoiceView *voiceView = [YMVoiceView voiceView];
+        [self.contentView addSubview:voiceView];
+        _voiceView = voiceView;
+    }
+    return _voiceView;
 }
 
 -(YMTopicPictureView *)pictureView{
@@ -82,8 +94,8 @@
         self.pictureView.topic = topic;
         self.pictureView.frame = topic.pictureF;
     }  else if (topic.type == YMTopicTypeVoice) {
-//        self.voiceView.topic = topic;
-//        self.voiceView.frame = topic.voiceF;
+        self.voiceView.topic = topic;
+        self.voiceView.frame = topic.voiceF;
     }
 }
 

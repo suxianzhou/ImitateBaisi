@@ -7,15 +7,39 @@
 //
 
 #import "YMVoiceView.h"
+#import "YMTopic.h"
+#import "UIImageView+WebCache.h"
+
+@interface YMVoiceView ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+@property (weak, nonatomic) IBOutlet UILabel *voicetimeLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *playcountLabel;
+
+@end
 
 @implementation YMVoiceView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+-(void)setTopic:(YMTopic *)topic {
+    _topic = topic;
+    //图片
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:topic.large_image]];
+    //播放次数
+    self.playcountLabel.text = [NSString stringWithFormat:@"%zd", topic.playcount];
+    //时长
+    NSInteger minute = topic.voicetime / 60;
+    NSInteger second = topic.voicetime % 60;
+    self.voicetimeLabel.text = [NSString stringWithFormat:@"%02zd:%02zd", minute, second];
 }
-*/
+
++(instancetype)voiceView {
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] lastObject];
+}
+
+-(void)awakeFromNib {
+    self.autoresizingMask = UIViewAutoresizingNone;
+}
 
 @end

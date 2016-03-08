@@ -11,9 +11,7 @@
 #import <MJExtension.h>
 
 @implementation YMTopic {
-    
     CGFloat _cellHeight;
-    CGRect _pictureF;
 }
 
 +(NSDictionary *)mj_replacedKeyFromPropertyName {
@@ -87,6 +85,15 @@
             //图片的高度
             _cellHeight += pictureH + YMTopicCellMargin;
         } else if (self.type == YMTopicTypeVoice) { //声音帖子
+            CGFloat voiceX = YMTopicCellMargin;
+            CGFloat voiceY = YMTopicCellTextY + textH + YMTopicCellMargin;
+            CGFloat voiceW = maxSize.width;
+            CGFloat voiceH = voiceW * self.height / self.width;
+            _voiceF = CGRectMake(voiceX, voiceY, voiceW, voiceH);
+            
+            _cellHeight += voiceH + YMTopicCellMargin;
+        } else if (self.type == YMTopicTypeVideo) { //视频帖子
+            
             
         }
         

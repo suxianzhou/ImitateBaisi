@@ -38,6 +38,10 @@
 @property (nonatomic, copy) NSString *large_image;
 /** 中图片路径*/
 @property (nonatomic, copy) NSString *middle_image;
+/** 音频时长*/
+@property (nonatomic, assign) NSInteger voicetime;
+/** 播放次数*/
+@property (nonatomic, assign) int playcount;
 
 /******** 额外属性 *********/
 /** cell的高度*/
@@ -46,6 +50,8 @@
 @property (nonatomic, assign) YMTopicType type;
 /** 图片控件的frame*/
 @property (nonatomic, assign, readonly) CGRect pictureF;
+/** 声音控件的frame*/
+@property (nonatomic, assign, readonly) CGRect voiceF;
 /** 图片控件的frame*/
 @property (nonatomic, assign, getter=isBigPicture) BOOL bigPicture;
 /** 图片下载进度*/
