@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5BE0CBC799E43CD62EE656E4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7D91F6AB0D576E1A4FF2F8 /* libPods.a */; };
 		942685571C6D77E40072099B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 942685561C6D77E40072099B /* Assets.xcassets */; };
+		942851511C8F1698001D738D /* YMVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 942851501C8F1698001D738D /* YMVideoView.m */; };
+		942851531C8F16A2001D738D /* YMVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 942851521C8F16A2001D738D /* YMVideoView.xib */; };
 		944E60CE1C774A8900B72EDF /* YMTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 944E60CD1C774A8900B72EDF /* YMTopicViewController.m */; };
 		945AEFBA1C6EAE3A003D7CEC /* YMRecommandCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 945AEFB91C6EAE3A003D7CEC /* YMRecommandCategory.m */; };
 		945AEFBD1C6EAF7A003D7CEC /* YMRecommandCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 945AEFBC1C6EAF7A003D7CEC /* YMRecommandCategoryCell.m */; };
@@ -62,6 +64,9 @@
 		942685471C6D77E40072099B /* ImitateBaisi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImitateBaisi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		942685561C6D77E40072099B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9426855B1C6D77E40072099B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9428514F1C8F1698001D738D /* YMVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMVideoView.h; sourceTree = "<group>"; };
+		942851501C8F1698001D738D /* YMVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMVideoView.m; sourceTree = "<group>"; };
+		942851521C8F16A2001D738D /* YMVideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMVideoView.xib; sourceTree = "<group>"; };
 		944E60CC1C774A8900B72EDF /* YMTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMTopicViewController.h; sourceTree = "<group>"; };
 		944E60CD1C774A8900B72EDF /* YMTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMTopicViewController.m; sourceTree = "<group>"; };
 		945AEFB81C6EAE3A003D7CEC /* YMRecommandCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRecommandCategory.h; sourceTree = "<group>"; };
@@ -263,11 +268,14 @@
 				94FF290F1C78A61500DB5344 /* YMTopicPictureView.h */,
 				94FF29101C78A61500DB5344 /* YMTopicPictureView.m */,
 				94FF29121C78A61F00DB5344 /* YMTopicPictureView.xib */,
-				94C811171C7DFD8E00BEA7D2 /* YMProgressView.h */,
-				94C811181C7DFD8E00BEA7D2 /* YMProgressView.m */,
+				9428514F1C8F1698001D738D /* YMVideoView.h */,
+				942851501C8F1698001D738D /* YMVideoView.m */,
+				942851521C8F16A2001D738D /* YMVideoView.xib */,
 				94B967841C8DD31700807036 /* YMVoiceView.h */,
 				94B967851C8DD31700807036 /* YMVoiceView.m */,
 				94B967871C8DD32200807036 /* YMVoiceView.xib */,
+				94C811171C7DFD8E00BEA7D2 /* YMProgressView.h */,
+				94C811181C7DFD8E00BEA7D2 /* YMProgressView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -549,6 +557,7 @@
 				945AEFC41C6ECB50003D7CEC /* YMRecommandUserCell.xib in Resources */,
 				94FEF36C1C70C78A0001A8D1 /* YMPushGuide.xib in Resources */,
 				94C811161C7DFA4B00BEA7D2 /* YMShowPictureViewController.xib in Resources */,
+				942851531C8F16A2001D738D /* YMVideoView.xib in Resources */,
 				94E888B31C81DDB900842458 /* YMPublishView.xib in Resources */,
 				94E070AE1C6E11B100D8D3A8 /* YMRecommandViewController.xib in Resources */,
 				945AEFBF1C6EAF89003D7CEC /* YMRecommandCategoryCell.xib in Resources */,
@@ -646,6 +655,7 @@
 				94E070A21C6DD39800D8D3A8 /* YMNewViewController.m in Sources */,
 				94D05A041C6F3575005408A5 /* YMRecommandTagCell.m in Sources */,
 				94FEF3671C70AC680001A8D1 /* YMTextField.m in Sources */,
+				942851511C8F1698001D738D /* YMVideoView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,27 +1,27 @@
 //
-//  YMVoiceView.m
+//  YMVideoView.m
 //  ImitateBaisi
 //
-//  Created by 杨蒙 on 16/3/7.
+//  Created by 杨蒙 on 16/3/8.
 //  Copyright © 2016年 hrscy. All rights reserved.
 //
 
-#import "YMVoiceView.h"
+#import "YMVideoView.h"
 #import "YMTopic.h"
 #import "UIImageView+WebCache.h"
 #import "YMShowPictureViewController.h"
 
-@interface YMVoiceView ()
+@interface YMVideoView ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
-@property (weak, nonatomic) IBOutlet UILabel *voicetimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *videotimeLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *playcountLabel;
 
 @end
 
-@implementation YMVoiceView
+@implementation YMVideoView
 
 -(void)setTopic:(YMTopic *)topic {
     _topic = topic;
@@ -30,12 +30,13 @@
     //播放次数
     self.playcountLabel.text = [NSString stringWithFormat:@"%zd播放", topic.playcount];
     //时长
-    NSInteger minute = topic.voicetime / 60;
-    NSInteger second = topic.voicetime % 60;
-    self.voicetimeLabel.text = [NSString stringWithFormat:@"%02zd:%02zd", minute, second];
+    NSInteger minute = topic.videotime / 60;
+    NSInteger second = topic.videotime % 60;
+    self.videotimeLabel.text = [NSString stringWithFormat:@"%02zd:%02zd", minute, second];
+    
 }
 
-+(instancetype)voiceView {
++(instancetype)videoView {
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] lastObject];
 }
 
@@ -44,7 +45,7 @@
     //如果发现控件的位置和尺寸不是自己设置的，那么有可能是自动伸缩属性导致
     self.autoresizingMask = UIViewAutoresizingNone;
     self.imageView.userInteractionEnabled = YES;
-    [self.imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showPicture)] ];
+    [self.imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showPicture)]];
 }
 
 -(void)showPicture {

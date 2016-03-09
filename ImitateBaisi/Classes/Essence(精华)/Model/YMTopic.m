@@ -93,8 +93,13 @@
             
             _cellHeight += voiceH + YMTopicCellMargin;
         } else if (self.type == YMTopicTypeVideo) { //视频帖子
+            CGFloat videoX = YMTopicCellMargin;
+            CGFloat videoY = YMTopicCellTextY + textH + YMTopicCellMargin;
+            CGFloat videoW = maxSize.width;
+            CGFloat videoH = videoW * self.height / self.width;
+            _videoF = CGRectMake(videoX, videoY, videoW, videoH);
             
-            
+            _cellHeight += videoH + YMTopicCellMargin;
         }
         
         //底部的高度
