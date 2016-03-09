@@ -46,6 +46,8 @@
 @property (nonatomic, assign) int playcount;
 /** 视频路径*/
 @property (nonatomic, copy) NSString *videouri;
+/** 最热评论(存放YMComment数据)*/
+@property (nonatomic, strong) NSArray *top_cmt;
 
 
 /******** 额外属性 *********/

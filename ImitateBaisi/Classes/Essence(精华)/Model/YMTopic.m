@@ -22,6 +22,10 @@
              };
 }
 
++(NSDictionary *)mj_objectClassInArray {
+    return @{@"top_cmt" : @"YMComment"};
+}
+
 -(NSString *)create_time  {
     NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
     fmt.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
