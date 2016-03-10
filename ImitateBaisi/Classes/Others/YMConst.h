@@ -28,3 +28,5 @@ UIKIT_EXTERN CGFloat const YMTopicCellPictureBreakH;
 UIKIT_EXTERN NSString *const YMUserSexMale;
 /** 用户模型性别属性值-女*/
 UIKIT_EXTERN NSString *const YMUserSexFamale;
+/** 最热评论标题的高度*/
+UIKIT_EXTERN CGFloat const YMTopicCellCmtTitleH;

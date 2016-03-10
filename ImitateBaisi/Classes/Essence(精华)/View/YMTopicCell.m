@@ -12,6 +12,8 @@
 #import "YMTopicPictureView.h"
 #import "YMVoiceView.h"
 #import "YMVideoView.h"
+#import "YMComment.h"
+#import "YMUser.h"
 
 @interface YMTopicCell ()
 /** 头像*/
@@ -39,6 +41,10 @@
 @property (nonatomic, weak) YMVoiceView *voiceView;
 /** 视频帖子中间的内容*/
 @property (nonatomic, weak) YMVideoView *videoView;
+/** 最热评论的内容*/
+@property (weak, nonatomic) IBOutlet UILabel *topCmtContentLabel;
+/** 最热评论的整体*/
+@property (weak, nonatomic) IBOutlet UIView *topCmtView;
 
 @end
 
@@ -127,6 +133,14 @@
         self.videoView.hidden = YES;
         self.voiceView.hidden = YES;
         self.pictureView.hidden = YES;
+    }
+    //处理最热评论
+    YMComment *cmt = [topic.top_cmt firstObject];
+    if (cmt) {
+        self.topCmtView.hidden = NO;
+        self.topCmtContentLabel.text = [NSString stringWithFormat:@"%@:%@", cmt.user.username, cmt.content];
+    } else {
+        self.topCmtView.hidden = YES;
     }
 }
 

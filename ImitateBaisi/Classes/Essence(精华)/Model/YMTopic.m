@@ -9,6 +9,8 @@
 #import "YMTopic.h"
 #import "NSDate+YMExtension.h"
 #import <MJExtension.h>
+#import "YMComment.h"
+#import "YMUser.h"
 
 @implementation YMTopic {
     CGFloat _cellHeight;
@@ -104,6 +106,12 @@
             _videoF = CGRectMake(videoX, videoY, videoW, videoH);
             
             _cellHeight += videoH + YMTopicCellMargin;
+        }
+        YMComment *cmt = [self.top_cmt firstObject];
+        if (cmt) {
+            NSString *content = [NSString stringWithFormat:@"%@:%@", cmt.user.username, cmt.content];
+            CGFloat contentH = [content boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14]} context:nil].size.height;
+            _cellHeight += YMTopicCellCmtTitleH + contentH + YMTopicCellMargin;
         }
         
         //底部的高度

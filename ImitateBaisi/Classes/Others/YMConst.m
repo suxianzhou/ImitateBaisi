@@ -14,7 +14,9 @@ CGFloat const YMTopicCellPictureMaxH = 1000;
 CGFloat const YMTopicCellPictureBreakH = 250;
 
 /** 用户模型性别属性值-男*/
-UIKIT_EXTERN NSString *const YMUserSexMale = @"m";
+NSString *const YMUserSexMale = @"m";
 /** 用户模型性别属性值-女*/
-UIKIT_EXTERN NSString *const YMUserSexFamale = @"f";
+NSString *const YMUserSexFamale = @"f";
+/** 最热评论标题的高度*/
+CGFloat const YMTopicCellCmtTitleH = 20;
 
