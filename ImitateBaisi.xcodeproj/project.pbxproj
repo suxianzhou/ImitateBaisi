@@ -13,6 +13,8 @@
 		942851531C8F16A2001D738D /* YMVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 942851521C8F16A2001D738D /* YMVideoView.xib */; };
 		942851561C907076001D738D /* YMUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 942851551C907076001D738D /* YMUser.m */; };
 		942851591C90717D001D738D /* YMComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 942851581C90717D001D738D /* YMComment.m */; };
+		9428515D1C930F98001D738D /* YMCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428515B1C930F98001D738D /* YMCommentViewController.m */; };
+		9428515E1C930F98001D738D /* YMCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9428515C1C930F98001D738D /* YMCommentViewController.xib */; };
 		944E60CE1C774A8900B72EDF /* YMTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 944E60CD1C774A8900B72EDF /* YMTopicViewController.m */; };
 		945AEFBA1C6EAE3A003D7CEC /* YMRecommandCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 945AEFB91C6EAE3A003D7CEC /* YMRecommandCategory.m */; };
 		945AEFBD1C6EAF7A003D7CEC /* YMRecommandCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 945AEFBC1C6EAF7A003D7CEC /* YMRecommandCategoryCell.m */; };
@@ -73,6 +75,9 @@
 		942851551C907076001D738D /* YMUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMUser.m; sourceTree = "<group>"; };
 		942851571C90717D001D738D /* YMComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMComment.h; sourceTree = "<group>"; };
 		942851581C90717D001D738D /* YMComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMComment.m; sourceTree = "<group>"; };
+		9428515A1C930F98001D738D /* YMCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMCommentViewController.h; sourceTree = "<group>"; };
+		9428515B1C930F98001D738D /* YMCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMCommentViewController.m; sourceTree = "<group>"; };
+		9428515C1C930F98001D738D /* YMCommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMCommentViewController.xib; sourceTree = "<group>"; };
 		944E60CC1C774A8900B72EDF /* YMTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMTopicViewController.h; sourceTree = "<group>"; };
 		944E60CD1C774A8900B72EDF /* YMTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMTopicViewController.m; sourceTree = "<group>"; };
 		945AEFB81C6EAE3A003D7CEC /* YMRecommandCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRecommandCategory.h; sourceTree = "<group>"; };
@@ -247,6 +252,9 @@
 				94C811121C7DFA4B00BEA7D2 /* YMShowPictureViewController.h */,
 				94C811131C7DFA4B00BEA7D2 /* YMShowPictureViewController.m */,
 				94C811141C7DFA4B00BEA7D2 /* YMShowPictureViewController.xib */,
+				9428515A1C930F98001D738D /* YMCommentViewController.h */,
+				9428515B1C930F98001D738D /* YMCommentViewController.m */,
+				9428515C1C930F98001D738D /* YMCommentViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -571,6 +579,7 @@
 				94E888B31C81DDB900842458 /* YMPublishView.xib in Resources */,
 				94E070AE1C6E11B100D8D3A8 /* YMRecommandViewController.xib in Resources */,
 				945AEFBF1C6EAF89003D7CEC /* YMRecommandCategoryCell.xib in Resources */,
+				9428515E1C930F98001D738D /* YMCommentViewController.xib in Resources */,
 				94B967881C8DD32200807036 /* YMVoiceView.xib in Resources */,
 				942685571C6D77E40072099B /* Assets.xcassets in Resources */,
 			);
@@ -667,6 +676,7 @@
 				94E070A21C6DD39800D8D3A8 /* YMNewViewController.m in Sources */,
 				94D05A041C6F3575005408A5 /* YMRecommandTagCell.m in Sources */,
 				94FEF3671C70AC680001A8D1 /* YMTextField.m in Sources */,
+				9428515D1C930F98001D738D /* YMCommentViewController.m in Sources */,
 				942851511C8F1698001D738D /* YMVideoView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

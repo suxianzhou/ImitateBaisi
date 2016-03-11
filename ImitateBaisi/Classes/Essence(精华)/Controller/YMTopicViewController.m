@@ -13,6 +13,7 @@
 #import "MJExtension.h"
 #import "MJRefresh.h"
 #import "YMTopicCell.h"
+#import "YMCommentViewController.h"
 
 @interface YMTopicViewController ()
 
@@ -145,6 +146,11 @@ static NSString *const YMTopicCellID = @"topic";
     YMTopicCell *cell = [tableView dequeueReusableCellWithIdentifier:YMTopicCellID];
     cell.topic = self.topics[indexPath.row];
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    YMCommentViewController *commetnVC = [[YMCommentViewController alloc] init];
+    [self.navigationController pushViewController:commetnVC animated:YES];
 }
 
 -(NSMutableArray *)topics{
