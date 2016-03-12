@@ -150,6 +150,7 @@ static NSString *const YMTopicCellID = @"topic";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     YMCommentViewController *commetnVC = [[YMCommentViewController alloc] init];
+    commetnVC.topic = self.topics[indexPath.row];
     [self.navigationController pushViewController:commetnVC animated:YES];
 }
 

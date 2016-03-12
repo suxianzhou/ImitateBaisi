@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@class YMTopic;
 
 @interface YMCommentViewController : UIViewController
-
+/** topic*/
+@property (nonatomic, strong) YMTopic *topic;
 @end

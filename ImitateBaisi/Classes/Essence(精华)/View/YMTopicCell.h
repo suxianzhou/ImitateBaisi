@@ -14,4 +14,6 @@
 /** topic*/
 @property (nonatomic, strong) YMTopic *topic;
 
++(instancetype)cell;
+
 @end

@@ -17,6 +17,15 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E9X-P0-8Kr" userLabel="评论内容">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="sXp-Zn-O0L"/>
+                        <outlet property="delegate" destination="-1" id="xZV-YZ-SL7"/>
+                    </connections>
+                </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5z-SN-vEv" userLabel="底部工具条">
                     <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                     <subviews>
@@ -69,15 +78,6 @@
                         <constraint firstItem="lbF-vm-hJp" firstAttribute="top" secondItem="B5z-SN-vEv" secondAttribute="top" id="wtC-2N-cYT"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E9X-P0-8Kr" userLabel="评论内容">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
-                    <animations/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="sXp-Zn-O0L"/>
-                        <outlet property="delegate" destination="-1" id="xZV-YZ-SL7"/>
-                    </connections>
-                </tableView>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

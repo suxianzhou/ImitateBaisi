@@ -7,6 +7,8 @@
 //
 
 #import "YMCommentViewController.h"
+#import "YMTopicCell.h"
+#import "YMTopic.h"
 
 @interface YMCommentViewController () <UITableViewDelegate, UITableViewDataSource>
 /** 工具条底部间距*/
@@ -21,8 +23,17 @@
     [super viewDidLoad];
     
     [self setupBasic];
+    
+    [self setupHeader];
 }
 
+
+-(void)setupHeader {
+    YMTopicCell *cell = [YMTopicCell cell];
+    cell.topic = self.topic;;
+    cell.height = self.topic.cellHeight;
+    self.tableView.tableHeaderView = cell;
+}
 
 -(void)setupBasic {
     self.navigationItem.title = @"评论";
@@ -40,6 +51,18 @@
     [UIView animateWithDuration:duration animations:^{
         [self.view layoutIfNeeded];
     }];
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 10;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    }
+    return cell;
 }
 
 -(void)dealloc {

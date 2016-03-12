@@ -50,6 +50,10 @@
 
 @implementation YMTopicCell
 
++(instancetype)cell {
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] lastObject];
+}
+
 - (void)awakeFromNib {
     UIImageView *bgView = [[UIImageView alloc] init];
     bgView.image = [UIImage imageNamed:@"mainCellBackground"];
@@ -157,7 +161,7 @@
     
     frame.origin.x = YMTopicCellMargin;
     frame.size.width -= 2 * YMTopicCellMargin;
-    frame.size.height -= YMTopicCellMargin;
+    frame.size.height = self.topic.cellHeight - YMTopicCellMargin;
     frame.origin.y += YMTopicCellMargin;
     
     [super setFrame:frame];
