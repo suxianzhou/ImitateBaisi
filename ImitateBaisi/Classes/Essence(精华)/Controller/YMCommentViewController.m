@@ -29,10 +29,15 @@
 
 
 -(void)setupHeader {
+    UIView *header = [[UIView alloc] init];
     YMTopicCell *cell = [YMTopicCell cell];
     cell.topic = self.topic;;
     cell.height = self.topic.cellHeight;
-    self.tableView.tableHeaderView = cell;
+    cell.width = SCREENW;
+    [header addSubview:cell];
+    header.height = self.topic.cellHeight + YMTopicCellMargin;
+    self.tableView.tableHeaderView = header;
+    self.tableView.backgroundColor = YMGlobalBg;
 }
 
 -(void)setupBasic {
@@ -62,6 +67,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
+    cell.textLabel.text = [NSString stringWithFormat:@""];
     return cell;
 }
 
