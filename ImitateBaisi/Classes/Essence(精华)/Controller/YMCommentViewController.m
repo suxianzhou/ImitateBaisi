@@ -9,6 +9,8 @@
 #import "YMCommentViewController.h"
 #import "YMTopicCell.h"
 #import "YMTopic.h"
+#import "MJRefresh.h"
+#import "AFNetworking.h"
 
 @interface YMCommentViewController () <UITableViewDelegate, UITableViewDataSource>
 /** 工具条底部间距*/
@@ -25,8 +27,34 @@
     [self setupBasic];
     
     [self setupHeader];
+    
+    [self setupRefresh];
 }
 
+
+-(void)setupRefresh {
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewComments)];
+    [self.tableView.mj_header beginRefreshing];
+    
+    self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreComments)];
+    
+}
+
+-(void)loadNewComments {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"a"] = @"dataList";
+    params[@"c"] = @"comment";
+    params[@"data_id"] = self.topic.ID;
+    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+}
+
+-(void)loadMoreComments {
+    
+}
 
 -(void)setupHeader {
     UIView *header = [[UIView alloc] init];
