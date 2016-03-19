@@ -11,11 +11,19 @@
 #import "YMTopic.h"
 #import "MJRefresh.h"
 #import "AFNetworking.h"
+#import "YMComment.h"
+#import "MJExtension.h"
 
 @interface YMCommentViewController () <UITableViewDelegate, UITableViewDataSource>
 /** 工具条底部间距*/
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomSpace;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+/** 最热评论*/
+@property (nonatomic, strong) NSArray *hotComments;
+
+/** 最新评论*/
+@property (nonatomic, strong) NSMutableArray *lastestComments;
 
 @end
 
@@ -37,17 +45,25 @@
     [self.tableView.mj_header beginRefreshing];
     
     self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreComments)];
-    
 }
 
 -(void)loadNewComments {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"dataList";
     params[@"c"] = @"comment";
+    params[@"hot"] = @"1";
     params[@"data_id"] = self.topic.ID;
     [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        //最热评论
+//        self.hotComments =
         
+        //最新评论
+        self.lastestComments = [YMComment mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+        
+        [self.tableView reloadData];
+        [self.tableView.mj_header endRefreshing];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [self.tableView.mj_header endRefreshing];
         
     }];
 }
@@ -86,8 +102,27 @@
     }];
 }
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    NSInteger hotCount = self.hotComments.count;
+    NSInteger lastestCount = self.lastestComments.count;
+    if (hotCount) return 2; //有最热评论+最新评论  2组
+    if (lastestCount) return 1; //最新评论  1组
+    return 0;
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    if (section == 0) {
+        NSInteger hotCount = self.hotComments.count;
+        return hotCount ? hotCount : self.lastestComments.count;
+    }
+    return self.lastestComments.count;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return self.hotComments.count ? @"最热评论" : @"最新评论";
+    }
+    return @"评论";
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -95,8 +130,24 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@""];
+    
+    YMComment *comment = [self commentInIndexPath:indexPath];
+    cell.textLabel.text = comment.content;
     return cell;
+}
+
+/**
+ *  返回第section组的所有评论
+ */
+-(NSArray *)commentInSection:(NSInteger)section {
+    if (section == 0) {
+        return self.hotComments.count ? self.hotComments : self.lastestComments;
+    }
+    return self.lastestComments;
+}
+
+-(YMComment *)commentInIndexPath:(NSIndexPath *)indexPath {
+    return [self commentInSection:indexPath.section][indexPath.row];
 }
 
 -(void)dealloc {
@@ -110,6 +161,13 @@
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [self.view endEditing:YES];
+}
+
+-(NSMutableArray *)lastestComments{
+    if (_lastestComments == nil) {
+        _lastestComments = [[NSMutableArray alloc] init];
+    }
+    return _lastestComments;
 }
 
 @end
