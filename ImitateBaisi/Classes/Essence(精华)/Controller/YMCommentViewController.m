@@ -13,6 +13,7 @@
 #import "AFNetworking.h"
 #import "YMComment.h"
 #import "MJExtension.h"
+#import "YMCommentHeaderView.h"
 
 @interface YMCommentViewController () <UITableViewDelegate, UITableViewDataSource>
 /** 工具条底部间距*/
@@ -55,7 +56,7 @@
     params[@"data_id"] = self.topic.ID;
     [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         //最热评论
-//        self.hotComments =
+        self.hotComments = [YMComment mj_objectArrayWithKeyValuesArray:responseObject[@"hot"]];
         
         //最新评论
         self.lastestComments = [YMComment mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
@@ -119,21 +120,15 @@
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *header = [[UIView alloc] init];
-    header.backgroundColor = YMGlobalBg;
+    //先从缓存池中找
+    YMCommentHeaderView *header = [YMCommentHeaderView headerViewTableView:tableView];
     
-    UILabel *label = [[UILabel alloc] init];
-    label.x = YMTopicCellMargin;
-    label.width = 200;
-    label.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-    
-    label.textColor = YMColor(67, 67, 67);
     if (section == 0) {
-        label.text = self.hotComments.count ? @"最热评论" : @"最新评论";
+        header.title = self.hotComments.count ? @"最热评论" : @"最新评论";
     } else {
-        label.text = @"评论";
+        header.title = @"评论";
     }
-    [header addSubview:label];
+    
     return header;
 }
 
