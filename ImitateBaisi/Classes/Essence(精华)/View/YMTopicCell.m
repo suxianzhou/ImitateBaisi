@@ -139,10 +139,9 @@
         self.pictureView.hidden = YES;
     }
     //处理最热评论
-    YMComment *cmt = [topic.top_cmt firstObject];
-    if (cmt) {
+    if (topic.top_cmt) {
         self.topCmtView.hidden = NO;
-        self.topCmtContentLabel.text = [NSString stringWithFormat:@"%@:%@", cmt.user.username, cmt.content];
+        self.topCmtContentLabel.text = [NSString stringWithFormat:@"%@:%@", topic.top_cmt.user.username, topic.top_cmt.content];
     } else {
         self.topCmtView.hidden = YES;
     }

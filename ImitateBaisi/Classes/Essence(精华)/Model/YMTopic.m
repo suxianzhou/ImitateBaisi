@@ -22,6 +22,8 @@
              @"small_image" : @"image0",
              @"large_image" : @"image1",
              @"middle_image" : @"image2",
+             @"top_cmt" : @"top_cmt[0]",
+             @"ctime" : @"top_cmt[0].ctime"
              };
 }
 
@@ -108,9 +110,9 @@
             
             _cellHeight += videoH + YMTopicCellMargin;
         }
-        YMComment *cmt = [self.top_cmt firstObject];
-        if (cmt) {
-            NSString *content = [NSString stringWithFormat:@"%@:%@", cmt.user.username, cmt.content];
+
+        if (self.top_cmt) {
+            NSString *content = [NSString stringWithFormat:@"%@:%@", self.top_cmt.user.username, self.top_cmt];
             CGFloat contentH = [content boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14]} context:nil].size.height;
             _cellHeight += YMTopicCellCmtTitleH + contentH + YMTopicCellMargin;
         }
