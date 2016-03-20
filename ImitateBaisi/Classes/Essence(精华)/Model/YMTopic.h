@@ -7,6 +7,7 @@
 //  帖子
 
 #import <UIKit/UIKit.h>
+@class YMComment;
 
 @interface YMTopic : NSObject
 
@@ -49,7 +50,7 @@
 /** 视频路径*/
 @property (nonatomic, copy) NSString *videouri;
 /** 最热评论(存放YMComment数据)*/
-@property (nonatomic, strong) NSArray *top_cmt;
+@property (nonatomic, strong) YMComment *top_cmt;
 
 
 /******** 额外属性 *********/

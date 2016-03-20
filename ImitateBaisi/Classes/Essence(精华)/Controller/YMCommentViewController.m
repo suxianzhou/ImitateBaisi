@@ -26,6 +26,9 @@
 /** 最新评论*/
 @property (nonatomic, strong) NSMutableArray *lastestComments;
 
+/** 保存top_cmt*/
+@property (nonatomic, strong) NSArray *saved_top_cmt;
+
 @end
 
 @implementation YMCommentViewController
@@ -75,6 +78,14 @@
 
 -(void)setupHeader {
     UIView *header = [[UIView alloc] init];
+    
+    //清空top_cmt
+    if (self.topic.top_cmt.count) {
+        self.saved_top_cmt = self.topic.top_cmt;
+        self.topic.top_cmt = nil;
+        [self.topic setValue:@0 forKey:@"cellHeight"];
+    }
+    
     YMTopicCell *cell = [YMTopicCell cell];
     cell.topic = self.topic;;
     cell.height = self.topic.cellHeight;
@@ -159,6 +170,11 @@
 
 -(void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    //回复帖子的top_cmt
+    if (self.saved_top_cmt.count) {
+        self.topic.top_cmt = self.saved_top_cmt;
+        [self.topic setValue:@0 forKey:@"cellHeight"];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
