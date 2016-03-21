@@ -52,7 +52,7 @@
 /** 最热评论(存放YMComment数据)*/
 @property (nonatomic, strong) YMComment *top_cmt;
 /** ctime*/
-@property (nonatomic, copy) NSString *ctime;
+@property (nonatomic, copy) NSString *qzone_uid;
 
 /******** 额外属性 *********/
 /** cell的高度*/

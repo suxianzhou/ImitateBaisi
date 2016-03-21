@@ -16,6 +16,8 @@
 		9428515D1C930F98001D738D /* YMCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428515B1C930F98001D738D /* YMCommentViewController.m */; };
 		9428515E1C930F98001D738D /* YMCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9428515C1C930F98001D738D /* YMCommentViewController.xib */; };
 		942851611C9CFC3E001D738D /* YMCommentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 942851601C9CFC3E001D738D /* YMCommentHeaderView.m */; };
+		942851651CA0370B001D738D /* YMCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 942851631CA0370B001D738D /* YMCommentCell.m */; };
+		942851661CA0370B001D738D /* YMCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 942851641CA0370B001D738D /* YMCommentCell.xib */; };
 		944E60CE1C774A8900B72EDF /* YMTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 944E60CD1C774A8900B72EDF /* YMTopicViewController.m */; };
 		945AEFBA1C6EAE3A003D7CEC /* YMRecommandCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 945AEFB91C6EAE3A003D7CEC /* YMRecommandCategory.m */; };
 		945AEFBD1C6EAF7A003D7CEC /* YMRecommandCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 945AEFBC1C6EAF7A003D7CEC /* YMRecommandCategoryCell.m */; };
@@ -81,6 +83,9 @@
 		9428515C1C930F98001D738D /* YMCommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMCommentViewController.xib; sourceTree = "<group>"; };
 		9428515F1C9CFC3E001D738D /* YMCommentHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMCommentHeaderView.h; sourceTree = "<group>"; };
 		942851601C9CFC3E001D738D /* YMCommentHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMCommentHeaderView.m; sourceTree = "<group>"; };
+		942851621CA0370B001D738D /* YMCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMCommentCell.h; sourceTree = "<group>"; };
+		942851631CA0370B001D738D /* YMCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMCommentCell.m; sourceTree = "<group>"; };
+		942851641CA0370B001D738D /* YMCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMCommentCell.xib; sourceTree = "<group>"; };
 		944E60CC1C774A8900B72EDF /* YMTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMTopicViewController.h; sourceTree = "<group>"; };
 		944E60CD1C774A8900B72EDF /* YMTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMTopicViewController.m; sourceTree = "<group>"; };
 		945AEFB81C6EAE3A003D7CEC /* YMRecommandCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRecommandCategory.h; sourceTree = "<group>"; };
@@ -299,6 +304,9 @@
 				94C811181C7DFD8E00BEA7D2 /* YMProgressView.m */,
 				9428515F1C9CFC3E001D738D /* YMCommentHeaderView.h */,
 				942851601C9CFC3E001D738D /* YMCommentHeaderView.m */,
+				942851621CA0370B001D738D /* YMCommentCell.h */,
+				942851631CA0370B001D738D /* YMCommentCell.m */,
+				942851641CA0370B001D738D /* YMCommentCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -583,6 +591,7 @@
 				942851531C8F16A2001D738D /* YMVideoView.xib in Resources */,
 				94E888B31C81DDB900842458 /* YMPublishView.xib in Resources */,
 				94E070AE1C6E11B100D8D3A8 /* YMRecommandViewController.xib in Resources */,
+				942851661CA0370B001D738D /* YMCommentCell.xib in Resources */,
 				945AEFBF1C6EAF89003D7CEC /* YMRecommandCategoryCell.xib in Resources */,
 				9428515E1C930F98001D738D /* YMCommentViewController.xib in Resources */,
 				94B967881C8DD32200807036 /* YMVoiceView.xib in Resources */,
@@ -672,6 +681,7 @@
 				942851591C90717D001D738D /* YMComment.m in Sources */,
 				94E0709E1C6DD39800D8D3A8 /* UIView+YMExtension.m in Sources */,
 				948E27771C73007B00A85AE1 /* YMConst.m in Sources */,
+				942851651CA0370B001D738D /* YMCommentCell.m in Sources */,
 				945AEFBD1C6EAF7A003D7CEC /* YMRecommandCategoryCell.m in Sources */,
 				945AEFC31C6ECB50003D7CEC /* YMRecommandUserCell.m in Sources */,
 				944E60CE1C774A8900B72EDF /* YMTopicViewController.m in Sources */,

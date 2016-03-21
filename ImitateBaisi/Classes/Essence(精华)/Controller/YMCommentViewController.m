@@ -14,6 +14,9 @@
 #import "YMComment.h"
 #import "MJExtension.h"
 #import "YMCommentHeaderView.h"
+#import "YMCommentCell.h"
+
+static NSString *const commentID = @"comment";
 
 @interface YMCommentViewController () <UITableViewDelegate, UITableViewDataSource>
 /** 工具条底部间距*/
@@ -100,6 +103,11 @@
     self.navigationItem.title = @"评论";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"comment_nav_item_share_icon" highImage:@"comment_nav_item_share_icon_click" target:nil action:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    //cell的高度设置
+    self.tableView.estimatedRowHeight = 44;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([YMCommentCell class]) bundle:nil] forCellReuseIdentifier:commentID];
     
 }
 
@@ -144,13 +152,8 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-    }
-    
-    YMComment *comment = [self commentInIndexPath:indexPath];
-    cell.textLabel.text = comment.content;
+    YMCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:commentID];
+    cell.comment = [self commentInIndexPath:indexPath];
     return cell;
 }
 

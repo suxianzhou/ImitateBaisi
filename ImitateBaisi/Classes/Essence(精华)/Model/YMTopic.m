@@ -23,7 +23,7 @@
              @"large_image" : @"image1",
              @"middle_image" : @"image2",
              @"top_cmt" : @"top_cmt[0]",
-             @"ctime" : @"top_cmt[0].ctime"
+             @"qzone_uid" : @"top_cmt[0].user.qzone_uid"
              };
 }
 
