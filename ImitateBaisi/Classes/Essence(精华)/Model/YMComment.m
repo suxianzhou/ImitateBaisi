@@ -7,7 +7,14 @@
 //
 
 #import "YMComment.h"
+#import "MJExtension.h"
 
 @implementation YMComment
+
++(NSDictionary *)mj_replacedKeyFromPropertyName {
+    return @{
+             @"ID" : @"id",
+             };
+}
 
 @end

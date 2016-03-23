@@ -23,7 +23,9 @@
 @implementation YMCommentCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    UIImageView *bgView = [[UIImageView alloc] init];
+    bgView.image = [UIImage imageNamed:@"mainCellBackground"];
+    self.backgroundView = bgView;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -46,6 +48,12 @@
         self.voiceButton.hidden = YES;
     }
     
+}
+
+-(void)setFrame:(CGRect)frame {
+    frame.origin.x = YMTopicCellMargin;
+    frame.size.width -= 2 * YMTopicCellMargin;
+    [super setFrame:frame];
 }
 
 @end
